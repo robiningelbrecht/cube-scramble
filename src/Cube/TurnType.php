@@ -31,17 +31,7 @@ enum TurnType: string
             case "2'":
             case "'2":
                 return self::DOUBLE;
-            default:
-                // Attempt to parse non-standard turn type
-                // (for invalid but reasonable moves like "y3")
-                $turns = $turnAbbreviation % 4;
-
-                return match ($turns) {
-                    0 => TurnType::NONE,
-                    1 => TurnType::CLOCKWISE,
-                    3 => TurnType::COUNTER_CLOCKWISE,
-                    default => throw new InvalidScramble(sprintf('Invalid turnAbbreviation "%s"', $turnAbbreviation))
-                };
+            default: throw new InvalidScramble(sprintf('Invalid turnAbbreviation "%s"', $turnAbbreviation));
         }
     }
 }

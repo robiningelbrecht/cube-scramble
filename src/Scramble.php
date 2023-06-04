@@ -2,7 +2,9 @@
 
 namespace RobinIngelbrecht\CubeScramble;
 
+use RobinIngelbrecht\CubeScramble\Cube\Size;
+
 interface Scramble
 {
-    public function fromNotation(string $notation): self;
+    public static function fromNotation(string $notation, Size $size = null): self;
 }

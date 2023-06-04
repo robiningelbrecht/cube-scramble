@@ -5,10 +5,8 @@ namespace RobinIngelbrecht\CubeScramble\Cube;
 use RobinIngelbrecht\CubeScramble\InvalidScramble;
 use RobinIngelbrecht\CubeScramble\Scramble;
 
-class CubeScramble implements Scramble, \Stringable
+class CubeScramble implements Scramble, \Stringable, \JsonSerializable
 {
-    private const REGEX = "/^(?<slices>[2-9]+)?(?<move>[UuFfRrDdLlBbMESxyz])(?<outerBlockIndicator>w)?(?<turnType>\d+\\'|\\'\d+|\d+|\\')?$/";
-
     /** @var \RobinIngelbrecht\CubeScramble\Cube\Turn[] */
     private array $turns;
 
@@ -18,43 +16,14 @@ class CubeScramble implements Scramble, \Stringable
         $this->turns = $turns;
     }
 
-    public function fromNotationAndSize(string $notation, Size $size): Scramble
+    public static function fromNotation(string $notation, Size $size = null): Scramble
     {
+        if (!$size) {
+            throw new InvalidScramble('Size is required');
+        }
         $turns = [];
-        foreach (explode(' ', $notation) as $turn) {
-            if (!preg_match(self::REGEX, $notation, $matches)) {
-                throw new InvalidScramble(sprintf('Invalid turn "%s", valid turns are %s', $turn, implode(', ', Move::casesAsStrings())));
-            }
-
-            $move = $matches['move'];
-            $isLowerCaseMove = $move === strtolower($move) && !in_array($move, ['x', 'y', 'z']);
-            if ($isLowerCaseMove) {
-                $move = strtoupper($move);
-            }
-
-            $outerBlockIndicator = $matches['outerBlockIndicator'] ?? '';
-            $slices = $matches['slices'] ?? null;
-            if (!$outerBlockIndicator && $slices) {
-                throw new InvalidScramble(sprintf('Invalid turn "%s", cannot specify number of slices if outer block move indicator "w" is not present', $turn));
-            }
-
-            if ($outerBlockIndicator && !$slices) {
-                $slices = 2;
-            }
-
-            $slices = $slices ?? 1;
-
-            $maxAllowedSlice = floor($size->getValue() / 2);
-            if ($slices > $maxAllowedSlice) {
-                throw new InvalidScramble(sprintf('Invalid turn "%s", slice cannot be greater than %s', $turn, $maxAllowedSlice));
-            }
-
-            $turns[] = Turn::fromMoveAndTurnTypeAndSlices(
-                $notation,
-                Move::from($move),
-                TurnType::getByTurnNotation($matches['turnType'] ?? ''),
-                $isLowerCaseMove ? 2 : (int) $slices,
-            );
+        foreach (explode(' ', $notation) as $turnNotation) {
+            $turns[] = Turn::fromNotationAndSize($turnNotation, $size);
         }
 
         return new self(...$turns);
@@ -81,5 +50,13 @@ class CubeScramble implements Scramble, \Stringable
     public function __toString(): string
     {
         return implode(' ', array_map(fn (Turn $turn) => $turn->getNotation(), $this->getTurns()));
+    }
+
+    /**
+     * @return array<mixed>
+     */
+    public function jsonSerialize(): array
+    {
+        return $this->getTurns();
     }
 }
