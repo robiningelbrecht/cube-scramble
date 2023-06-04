@@ -5,6 +5,7 @@ namespace Tests\Cube;
 use PHPUnit\Framework\TestCase;
 use RobinIngelbrecht\CubeScramble\Cube\CubeScramble;
 use RobinIngelbrecht\CubeScramble\Cube\Size;
+use RobinIngelbrecht\CubeScramble\InvalidScramble;
 use Spatie\Snapshots\MatchesSnapshots;
 
 class CubeScrambleTest extends TestCase
@@ -19,6 +20,23 @@ class CubeScrambleTest extends TestCase
         $this->assertMatchesJsonSnapshot(json_encode(
             CubeScramble::fromNotation($scramble, Size::fromInt($size))
         ));
+    }
+
+    /**
+     * @dataProvider provideNotations()
+     */
+    public function testReverse(int $size, string $scramble): void
+    {
+        $scramble = CubeScramble::fromNotation($scramble, Size::fromInt($size));
+        $this->assertEquals($scramble->reverse()->reverse(), $scramble);
+    }
+
+    public function itShouldThrowWhenEmptySize(): void
+    {
+        $this->expectException(InvalidScramble::class);
+        $this->expectExceptionMessage('Size is required');
+
+        CubeScramble::fromNotation('L2');
     }
 
     public static function provideNotations(): array
