@@ -12,13 +12,17 @@ class CubeScrambleTest extends TestCase
 {
     use MatchesSnapshots;
 
+    private string $scrambleName;
+
     /**
      * @dataProvider provideNotations()
      */
     public function testFromNotation(int $size, string $scramble): void
     {
+        $scramble = CubeScramble::fromNotation($scramble, Size::fromInt($size));
+        $this->scrambleName = $scramble->getName();
         $this->assertMatchesJsonSnapshot(json_encode(
-            CubeScramble::fromNotation($scramble, Size::fromInt($size))
+            $scramble
         ));
     }
 
@@ -37,6 +41,13 @@ class CubeScrambleTest extends TestCase
         $this->expectExceptionMessage('Size is required');
 
         CubeScramble::fromNotation('L2');
+    }
+
+    protected function getSnapshotId(): string
+    {
+        return (new \ReflectionClass($this))->getShortName().'--'.
+            $this->scrambleName.'--'.
+            $this->snapshotIncrementor;
     }
 
     public static function provideNotations(): array

@@ -11,7 +11,8 @@ class CubeScramble implements Scramble, \Stringable, \JsonSerializable
     private array $turns;
 
     private function __construct(
-        Turn ...$turns
+        private readonly Size $size,
+        Turn ...$turns,
     ) {
         $this->turns = $turns;
     }
@@ -21,12 +22,23 @@ class CubeScramble implements Scramble, \Stringable, \JsonSerializable
         if (!$size) {
             throw new InvalidScramble('Size is required');
         }
-        $turns = [];
-        foreach (explode(' ', $notation) as $turnNotation) {
-            $turns[] = Turn::fromNotationAndSize($turnNotation, $size);
-        }
 
-        return new self(...$turns);
+        $turns = array_map(
+            fn (string $turnNotation) => Turn::fromNotationAndSize($turnNotation, $size),
+            explode(' ', $notation)
+        );
+
+        return new self($size, ...$turns);
+    }
+
+    public function getName(): string
+    {
+        return (new \ReflectionClass($this))->getShortName().$this->getSize().'x'.$this->getSize();
+    }
+
+    public function getSize(): Size
+    {
+        return $this->size;
     }
 
     /**
@@ -57,6 +69,9 @@ class CubeScramble implements Scramble, \Stringable, \JsonSerializable
      */
     public function jsonSerialize(): array
     {
-        return $this->getTurns();
+        return [
+            'size' => $this->getSize(),
+            'turns' => $this->getTurns(),
+        ];
     }
 }

@@ -4,7 +4,7 @@ namespace RobinIngelbrecht\CubeScramble\Cube;
 
 use RobinIngelbrecht\CubeScramble\InvalidScramble;
 
-class Size
+class Size implements \JsonSerializable, \Stringable
 {
     private function __construct(
         private readonly int $value
@@ -22,5 +22,15 @@ class Size
     public function getValue(): int
     {
         return $this->value;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getValue();
+    }
+
+    public function jsonSerialize(): int
+    {
+        return $this->getValue();
     }
 }
