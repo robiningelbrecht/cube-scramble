@@ -63,11 +63,6 @@ class CubeScramble implements Scramble, \Stringable, \JsonSerializable
         return new self($size, ...$turns);
     }
 
-    public function getName(): string
-    {
-        return (new \ReflectionClass($this))->getShortName().$this->getSize().'x'.$this->getSize();
-    }
-
     public function getSize(): Size
     {
         return $this->size;
@@ -89,6 +84,11 @@ class CubeScramble implements Scramble, \Stringable, \JsonSerializable
         );
 
         return $this;
+    }
+
+    public function forHumans(): string
+    {
+        // foreach ($this->getTurns())
     }
 
     public function __toString(): string

@@ -6,7 +6,7 @@ use RobinIngelbrecht\CubeScramble\Cube\Size;
 
 interface Scramble
 {
-    public function getName(): string;
+    public function forHumans(): string;
 
     public function reverse(): self;
 

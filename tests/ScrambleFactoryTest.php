@@ -13,14 +13,17 @@ class ScrambleFactoryTest extends TestCase
 {
     use MatchesSnapshots;
 
-    private string $scrambleName;
+    private string $snapshotName;
 
     /**
      * @dataProvider provideScrambles()
      */
     public function testFactoryMethods(Scramble $scrambleFromFactory, Scramble $expectedScramble): void
     {
-        $this->scrambleName = $scrambleFromFactory->getName();
+        $this->snapshotName = (new \ReflectionClass($expectedScramble))->getShortName();
+        if (method_exists($expectedScramble, 'getSize')) {
+            $this->snapshotName .= $expectedScramble->getSize().'x'.$expectedScramble->getSize();
+        }
         $this->assertEquals($scrambleFromFactory, $expectedScramble);
         $this->assertMatchesJsonSnapshot(json_encode($scrambleFromFactory));
     }
@@ -28,7 +31,7 @@ class ScrambleFactoryTest extends TestCase
     protected function getSnapshotId(): string
     {
         return (new \ReflectionClass($this))->getShortName().'--'.
-            $this->scrambleName.'--'.
+            $this->snapshotName.'--'.
             $this->snapshotIncrementor;
     }
 
