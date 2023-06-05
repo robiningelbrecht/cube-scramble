@@ -21,7 +21,7 @@ class Size implements \JsonSerializable, \Stringable
 
     public function getMaxSlices(): int
     {
-        return floor($this->getValue() / 2);
+        return (int) floor($this->getValue() / 2);
     }
 
     public function getValue(): int
@@ -31,7 +31,7 @@ class Size implements \JsonSerializable, \Stringable
 
     public function __toString(): string
     {
-        return $this->getValue();
+        return (string) $this->getValue();
     }
 
     public function jsonSerialize(): int
