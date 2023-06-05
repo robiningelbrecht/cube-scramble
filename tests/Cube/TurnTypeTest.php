@@ -13,7 +13,7 @@ class TurnTypeTest extends TestCase
      */
     public function testGetByTurnNotation(string $abbreviation, TurnType $expectedTurnType): void
     {
-        $this->assertEquals(TurnType::getByTurnNotation($abbreviation), $expectedTurnType);
+        $this->assertEquals(TurnType::getByTurnByModifier($abbreviation), $expectedTurnType);
     }
 
     public function testItShouldThrowWhenInvalid(): void
@@ -21,7 +21,7 @@ class TurnTypeTest extends TestCase
         $this->expectException(InvalidScramble::class);
         $this->expectExceptionMessage('Invalid turnAbbreviation "y3"');
 
-        TurnType::getByTurnNotation('y3');
+        TurnType::getByTurnByModifier('y3');
     }
 
     public static function provideTurnTypes(): array

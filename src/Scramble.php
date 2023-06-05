@@ -8,7 +8,9 @@ interface Scramble
 {
     public function getName(): string;
 
-    public static function fromNotation(string $notation, Size $size = null): self;
-
     public function reverse(): self;
+
+    public static function random(int $scrambleSize, Size $size = null): self;
+
+    public static function fromNotation(string $notation, Size $size = null): self;
 }

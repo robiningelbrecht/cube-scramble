@@ -12,7 +12,7 @@ class CubeScrambleTest extends TestCase
 {
     use MatchesSnapshots;
 
-    private string $scrambleName;
+    private string $snapshotName;
 
     /**
      * @dataProvider provideNotations()
@@ -20,7 +20,7 @@ class CubeScrambleTest extends TestCase
     public function testFromNotation(int $size, string $scramble): void
     {
         $scramble = CubeScramble::fromNotation($scramble, Size::fromInt($size));
-        $this->scrambleName = $scramble->getName();
+        $this->snapshotName = $scramble->getName();
         $this->assertMatchesJsonSnapshot(json_encode(
             $scramble
         ));
@@ -35,6 +35,12 @@ class CubeScrambleTest extends TestCase
         $this->assertEquals($scramble->reverse()->reverse(), $scramble);
     }
 
+    public function testRandom(): void
+    {
+        $scramble = CubeScramble::random(21, Size::fromInt(7));
+        $this->assertCount(21, explode(' ', (string) $scramble));
+    }
+
     public function itShouldThrowWhenEmptySize(): void
     {
         $this->expectException(InvalidScramble::class);
@@ -46,7 +52,7 @@ class CubeScrambleTest extends TestCase
     protected function getSnapshotId(): string
     {
         return (new \ReflectionClass($this))->getShortName().'--'.
-            $this->scrambleName.'--'.
+            $this->snapshotName.'--'.
             $this->snapshotIncrementor;
     }
 

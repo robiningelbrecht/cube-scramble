@@ -3,481 +3,481 @@
     "turns": [
         {
             "notation": "Rw",
-            "move": "R",
+            "face": "R",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "L2",
-            "move": "L",
+            "face": "L",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "3Uw'",
-            "move": "U",
+            "face": "U",
             "turnType": "counterClockwise",
             "slices": 3
         },
         {
             "notation": "L'",
-            "move": "L",
+            "face": "L",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "F'",
-            "move": "F",
+            "face": "F",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "Uw2",
-            "move": "U",
+            "face": "U",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "D2",
-            "move": "D",
+            "face": "D",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "Lw'",
-            "move": "L",
+            "face": "L",
             "turnType": "counterClockwise",
             "slices": 2
         },
         {
             "notation": "3Uw2",
-            "move": "U",
+            "face": "U",
             "turnType": "double",
             "slices": 3
         },
         {
             "notation": "U2",
-            "move": "U",
+            "face": "U",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "F'",
-            "move": "F",
+            "face": "F",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "3Uw'",
-            "move": "U",
+            "face": "U",
             "turnType": "counterClockwise",
             "slices": 3
         },
         {
             "notation": "3Fw",
-            "move": "F",
+            "face": "F",
             "turnType": "clockwise",
             "slices": 3
         },
         {
             "notation": "Bw",
-            "move": "B",
+            "face": "B",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "R",
-            "move": "R",
+            "face": "R",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "3Fw'",
-            "move": "F",
+            "face": "F",
             "turnType": "counterClockwise",
             "slices": 3
         },
         {
             "notation": "B'",
-            "move": "B",
+            "face": "B",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "U2",
-            "move": "U",
+            "face": "U",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "Bw2",
-            "move": "B",
+            "face": "B",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "D",
-            "move": "D",
+            "face": "D",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "Bw2",
-            "move": "B",
+            "face": "B",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "3Fw'",
-            "move": "F",
+            "face": "F",
             "turnType": "counterClockwise",
             "slices": 3
         },
         {
             "notation": "Fw'",
-            "move": "F",
+            "face": "F",
             "turnType": "counterClockwise",
             "slices": 2
         },
         {
             "notation": "L",
-            "move": "L",
+            "face": "L",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "Uw",
-            "move": "U",
+            "face": "U",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "B",
-            "move": "B",
+            "face": "B",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "3Fw'",
-            "move": "F",
+            "face": "F",
             "turnType": "counterClockwise",
             "slices": 3
         },
         {
             "notation": "Uw",
-            "move": "U",
+            "face": "U",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "D",
-            "move": "D",
+            "face": "D",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "3Rw2",
-            "move": "R",
+            "face": "R",
             "turnType": "double",
             "slices": 3
         },
         {
             "notation": "B'",
-            "move": "B",
+            "face": "B",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "Rw2",
-            "move": "R",
+            "face": "R",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "Uw2",
-            "move": "U",
+            "face": "U",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "3Rw'",
-            "move": "R",
+            "face": "R",
             "turnType": "counterClockwise",
             "slices": 3
         },
         {
             "notation": "Fw'",
-            "move": "F",
+            "face": "F",
             "turnType": "counterClockwise",
             "slices": 2
         },
         {
             "notation": "U'",
-            "move": "U",
+            "face": "U",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "B2",
-            "move": "B",
+            "face": "B",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "Fw2",
-            "move": "F",
+            "face": "F",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "Dw",
-            "move": "D",
+            "face": "D",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "Uw'",
-            "move": "U",
+            "face": "U",
             "turnType": "counterClockwise",
             "slices": 2
         },
         {
             "notation": "Lw2",
-            "move": "L",
+            "face": "L",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "F2",
-            "move": "F",
+            "face": "F",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "Rw2",
-            "move": "R",
+            "face": "R",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "Uw",
-            "move": "U",
+            "face": "U",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "U",
-            "move": "U",
+            "face": "U",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "D'",
-            "move": "D",
+            "face": "D",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "R",
-            "move": "R",
+            "face": "R",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "L2",
-            "move": "L",
+            "face": "L",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "Fw",
-            "move": "F",
+            "face": "F",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "Uw'",
-            "move": "U",
+            "face": "U",
             "turnType": "counterClockwise",
             "slices": 2
         },
         {
             "notation": "3Fw2",
-            "move": "F",
+            "face": "F",
             "turnType": "double",
             "slices": 3
         },
         {
             "notation": "B'",
-            "move": "B",
+            "face": "B",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "Uw'",
-            "move": "U",
+            "face": "U",
             "turnType": "counterClockwise",
             "slices": 2
         },
         {
             "notation": "Bw",
-            "move": "B",
+            "face": "B",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "Rw2",
-            "move": "R",
+            "face": "R",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "3Fw",
-            "move": "F",
+            "face": "F",
             "turnType": "clockwise",
             "slices": 3
         },
         {
             "notation": "Uw",
-            "move": "U",
+            "face": "U",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "F2",
-            "move": "F",
+            "face": "F",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "3Fw2",
-            "move": "F",
+            "face": "F",
             "turnType": "double",
             "slices": 3
         },
         {
             "notation": "R",
-            "move": "R",
+            "face": "R",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "Dw2",
-            "move": "D",
+            "face": "D",
             "turnType": "double",
             "slices": 2
         },
         {
             "notation": "Uw'",
-            "move": "U",
+            "face": "U",
             "turnType": "counterClockwise",
             "slices": 2
         },
         {
             "notation": "L'",
-            "move": "L",
+            "face": "L",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "F",
-            "move": "F",
+            "face": "F",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "R'",
-            "move": "R",
+            "face": "R",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "Rw",
-            "move": "R",
+            "face": "R",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "3Fw2",
-            "move": "F",
+            "face": "F",
             "turnType": "double",
             "slices": 3
         },
         {
             "notation": "F2",
-            "move": "F",
+            "face": "F",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "Bw",
-            "move": "B",
+            "face": "B",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "R'",
-            "move": "R",
+            "face": "R",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "Bw",
-            "move": "B",
+            "face": "B",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "Rw'",
-            "move": "R",
+            "face": "R",
             "turnType": "counterClockwise",
             "slices": 2
         },
         {
             "notation": "U",
-            "move": "U",
+            "face": "U",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "Rw'",
-            "move": "R",
+            "face": "R",
             "turnType": "counterClockwise",
             "slices": 2
         },
         {
             "notation": "3Fw2",
-            "move": "F",
+            "face": "F",
             "turnType": "double",
             "slices": 3
         },
         {
             "notation": "3Rw2",
-            "move": "R",
+            "face": "R",
             "turnType": "double",
             "slices": 3
         },
         {
             "notation": "Fw",
-            "move": "F",
+            "face": "F",
             "turnType": "clockwise",
             "slices": 2
         },
         {
             "notation": "R2",
-            "move": "R",
+            "face": "R",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "3Fw",
-            "move": "F",
+            "face": "F",
             "turnType": "clockwise",
             "slices": 3
         },
         {
             "notation": "3Uw'",
-            "move": "U",
+            "face": "U",
             "turnType": "counterClockwise",
             "slices": 3
         }

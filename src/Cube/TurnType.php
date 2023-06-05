@@ -9,7 +9,6 @@ enum TurnType: string
     case CLOCKWISE = 'clockwise';
     case COUNTER_CLOCKWISE = 'counterClockwise';
     case DOUBLE = 'double';
-    case NONE = 'none';
 
     public function getOpposite(): self
     {
@@ -20,18 +19,29 @@ enum TurnType: string
         };
     }
 
-    public static function getByTurnNotation(string $turnAbbreviation): self
+    public function getModifier(): string
     {
-        switch ($turnAbbreviation) {
-            case '':
-                return self::CLOCKWISE;
-            case "'":
-                return self::COUNTER_CLOCKWISE;
-            case '2':
-            case "2'":
-            case "'2":
-                return self::DOUBLE;
-            default: throw new InvalidScramble(sprintf('Invalid turnAbbreviation "%s"', $turnAbbreviation));
-        }
+        return match ($this) {
+            self::CLOCKWISE => '',
+            self::COUNTER_CLOCKWISE => "'",
+            self::DOUBLE => '2',
+        };
+    }
+
+    public static function random(): self
+    {
+        $turnTypes = TurnType::cases();
+
+        return $turnTypes[array_rand($turnTypes)];
+    }
+
+    public static function getByTurnByModifier(string $modifier): self
+    {
+        return match ($modifier) {
+            '' => self::CLOCKWISE,
+            "'" => self::COUNTER_CLOCKWISE,
+            '2', "2'", "'2" => self::DOUBLE,
+            default => throw new InvalidScramble(sprintf('Invalid turnAbbreviation "%s"', $modifier)),
+        };
     }
 }

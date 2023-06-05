@@ -19,6 +19,11 @@ class Size implements \JsonSerializable, \Stringable
         return new self($size);
     }
 
+    public function getMaxSlices(): int
+    {
+        return floor($this->getValue() / 2);
+    }
+
     public function getValue(): int
     {
         return $this->value;

@@ -17,6 +17,38 @@ class CubeScramble implements Scramble, \Stringable, \JsonSerializable
         $this->turns = $turns;
     }
 
+    public static function random(int $scrambleSize, Size $size = null): Scramble
+    {
+        if (!$size) {
+            throw new InvalidScramble('Size is required');
+        }
+
+        $turns = [];
+        $previousFace = null;
+
+        for ($i = 0; $i < $scrambleSize; ++$i) {
+            do {
+                $newFace = Face::random();
+            } while ($previousFace && $previousFace->getPlane() === $newFace->getPlane());
+
+            $slices = mt_rand(1, $size->getMaxSlices());
+            $depthLayer = $slices > 2 ? $slices : '';
+            $sliceIndicator = $slices > 1 ? 'w' : '';
+            $turnType = TurnType::random();
+
+            $turns[] = Turn::fromFaceAndTurnTypeAndSlices(
+                $depthLayer.$newFace->value.$sliceIndicator.$turnType->getModifier(),
+                $newFace,
+                $turnType,
+                $slices
+            );
+
+            $previousFace = $newFace;
+        }
+
+        return new self($size, ...$turns);
+    }
+
     public static function fromNotation(string $notation, Size $size = null): Scramble
     {
         if (!$size) {

@@ -10,25 +10,25 @@ class Turn implements \JsonSerializable
 
     private function __construct(
         private readonly string $notation,
-        private readonly Move $move,
+        private readonly Face $face,
         private readonly TurnType $turnType,
         private readonly int $slices,
     ) {
     }
 
-    public static function fromMoveAndTurnTypeAndSlices(
+    public static function fromFaceAndTurnTypeAndSlices(
         string $notation,
-        Move $move,
+        Face $face,
         TurnType $turnType,
         int $slices,
     ): self {
-        return new self($notation, $move, $turnType, $slices);
+        return new self($notation, $face, $turnType, $slices);
     }
 
     public static function fromNotationAndSize(string $notation, Size $size): self
     {
         if (!preg_match(self::REGEX, $notation, $matches)) {
-            throw new InvalidScramble(sprintf('Invalid turn "%s", valid turns are %s', $notation, implode(', ', Move::casesAsStrings())));
+            throw new InvalidScramble(sprintf('Invalid turn "%s", valid turns are %s', $notation, implode(', ', Face::casesAsStrings())));
         }
 
         $move = $matches['move'];
@@ -49,15 +49,14 @@ class Turn implements \JsonSerializable
 
         $slices = $slices ?? 1;
 
-        $maxAllowedSlice = floor($size->getValue() / 2);
-        if ($slices > $maxAllowedSlice) {
-            throw new InvalidScramble(sprintf('Invalid turn "%s", slice cannot be greater than %s', $notation, $maxAllowedSlice));
+        if ($slices > $size->getMaxSlices()) {
+            throw new InvalidScramble(sprintf('Invalid turn "%s", slice cannot be greater than %s', $notation, $size->getMaxSlices()));
         }
 
-        return Turn::fromMoveAndTurnTypeAndSlices(
+        return Turn::fromFaceAndTurnTypeAndSlices(
             $notation,
-            Move::from($move),
-            TurnType::getByTurnNotation($matches['turnType'] ?? ''),
+            Face::from($move),
+            TurnType::getByTurnByModifier($matches['turnType'] ?? ''),
             $isLowerCaseMove ? 2 : (int) $slices,
         );
     }
@@ -69,9 +68,9 @@ class Turn implements \JsonSerializable
             $notation = str_contains($this->getNotation(), "'") ? str_replace("'", '', $this->getNotation()) : $this->getNotation()."'";
         }
 
-        return self::fromMoveAndTurnTypeAndSlices(
+        return self::fromFaceAndTurnTypeAndSlices(
             $notation,
-            $this->getMove(),
+            $this->getFace(),
             $this->getTurnType()->getOpposite(),
             $this->getSlices()
         );
@@ -82,9 +81,9 @@ class Turn implements \JsonSerializable
         return $this->notation;
     }
 
-    public function getMove(): Move
+    public function getFace(): Face
     {
-        return $this->move;
+        return $this->face;
     }
 
     public function getTurnType(): TurnType
@@ -104,7 +103,7 @@ class Turn implements \JsonSerializable
     {
         return [
             'notation' => $this->getNotation(),
-            'move' => $this->getMove(),
+            'face' => $this->getFace(),
             'turnType' => $this->getTurnType(),
             'slices' => $this->getSlices(),
         ];

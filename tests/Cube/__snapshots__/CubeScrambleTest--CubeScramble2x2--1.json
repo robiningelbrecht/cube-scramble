@@ -3,55 +3,55 @@
     "turns": [
         {
             "notation": "F2",
-            "move": "F",
+            "face": "F",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "U'",
-            "move": "U",
+            "face": "U",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "R",
-            "move": "R",
+            "face": "R",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "U2",
-            "move": "U",
+            "face": "U",
             "turnType": "double",
             "slices": 0
         },
         {
             "notation": "R",
-            "move": "R",
+            "face": "R",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "U",
-            "move": "U",
+            "face": "U",
             "turnType": "clockwise",
             "slices": 0
         },
         {
             "notation": "R'",
-            "move": "R",
+            "face": "R",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "F'",
-            "move": "F",
+            "face": "F",
             "turnType": "counterClockwise",
             "slices": 0
         },
         {
             "notation": "R",
-            "move": "R",
+            "face": "R",
             "turnType": "clockwise",
             "slices": 0
         }
