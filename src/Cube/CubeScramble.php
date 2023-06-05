@@ -88,7 +88,7 @@ class CubeScramble implements Scramble, \Stringable, \JsonSerializable
 
     public function forHumans(): string
     {
-        // foreach ($this->getTurns())
+        return implode(PHP_EOL, array_map(fn (Turn $turn) => $turn->forHumans(), $this->getTurns()));
     }
 
     public function __toString(): string

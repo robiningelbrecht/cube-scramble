@@ -28,6 +28,23 @@ enum TurnType: string
         };
     }
 
+    public function forHumans(): ?string
+    {
+        return match ($this) {
+            self::CLOCKWISE => 'clockwise',
+            self::COUNTER_CLOCKWISE => 'counterclockwise',
+            self::DOUBLE => null,
+        };
+    }
+
+    public function getDegrees(): int
+    {
+        return match ($this) {
+            self::CLOCKWISE, self::COUNTER_CLOCKWISE => 90,
+            self::DOUBLE => 180,
+        };
+    }
+
     public static function random(): self
     {
         $turnTypes = TurnType::cases();

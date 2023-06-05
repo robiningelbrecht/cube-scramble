@@ -20,10 +20,16 @@ class CubeScrambleTest extends TestCase
     public function testFromNotation(int $size, string $scramble): void
     {
         $scramble = CubeScramble::fromNotation($scramble, Size::fromInt($size));
-        $this->snapshotName = $scramble->getName();
+
+        $this->snapshotName = (new \ReflectionClass($scramble))->getShortName();
+        if (method_exists($scramble, 'getSize')) {
+            $this->snapshotName .= $scramble->getSize().'x'.$scramble->getSize();
+        }
+
         $this->assertMatchesJsonSnapshot(json_encode(
             $scramble
         ));
+        $this->assertMatchesTextSnapshot($scramble->forHumans());
     }
 
     /**

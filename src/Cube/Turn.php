@@ -96,6 +96,24 @@ class Turn implements \JsonSerializable
         return $this->slices;
     }
 
+    public function forHumans(): string
+    {
+        if ($turn = $this->getTurnType()->forHumans()) {
+            return sprintf(
+                'Turn the %s face %s degrees %s',
+                $this->getFace()->forHumans(),
+                $this->getTurnType()->getDegrees(),
+                $turn
+            );
+        }
+
+        return sprintf(
+            'Turn the %s face %s degrees',
+            $this->getFace()->forHumans(),
+            $this->getTurnType()->getDegrees(),
+        );
+    }
+
     /**
      * @return array<mixed>
      */

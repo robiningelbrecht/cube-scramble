@@ -20,6 +20,18 @@ enum Face: string
         return $faces[array_rand($faces)];
     }
 
+    public function forHumans(): string
+    {
+        return match ($this) {
+            self::L => 'left',
+            self::R => 'right',
+            self::U => 'upper',
+            self::D => 'bottom',
+            self::F => 'front',
+            self::B => 'back',
+        };
+    }
+
     public function getPlane(): Plane
     {
         return match ($this) {
