@@ -4,7 +4,7 @@ namespace RobinIngelbrecht\CubeScramble;
 
 use RobinIngelbrecht\CubeScramble\Cube\Size;
 
-interface Scramble
+interface Scramble extends \Stringable
 {
     public function forHumans(): string;
 

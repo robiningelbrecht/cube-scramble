@@ -12,7 +12,7 @@ class TurnTest extends TestCase
     public function testItShouldThrowWhenInvalidNotation(): void
     {
         $this->expectException(InvalidScramble::class);
-        $this->expectExceptionMessage('Invalid turn "V", valid turns are U, R, F, D, L, B');
+        $this->expectExceptionMessage('Invalid turn "V"');
 
         Turn::fromNotationAndSize('V', Size::fromInt(3));
     }

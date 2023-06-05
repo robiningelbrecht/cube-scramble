@@ -5,7 +5,7 @@ namespace RobinIngelbrecht\CubeScramble\Cube;
 use RobinIngelbrecht\CubeScramble\InvalidScramble;
 use RobinIngelbrecht\CubeScramble\Scramble;
 
-class CubeScramble implements Scramble, \Stringable, \JsonSerializable
+class CubeScramble implements Scramble, \JsonSerializable
 {
     /** @var \RobinIngelbrecht\CubeScramble\Cube\Turn[] */
     private array $turns;

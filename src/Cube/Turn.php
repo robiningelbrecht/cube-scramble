@@ -6,7 +6,7 @@ use RobinIngelbrecht\CubeScramble\InvalidScramble;
 
 class Turn implements \JsonSerializable
 {
-    private const REGEX = "/^(?<slices>[2-9]+)?(?<move>[UuFfRrDdLlBbMESxyz])(?<outerBlockIndicator>w)?(?<turnType>\d+\\'|\\'\d+|\d+|\\')?$/";
+    private const REGEX = "/^(?<slices>[2-9]+)?(?<move>[UFRDLB])(?<outerBlockIndicator>w)?(?<turnType>\d+\\'|\\'\d+|\d+|\\')?$/";
 
     private function __construct(
         private readonly string $notation,
@@ -28,15 +28,10 @@ class Turn implements \JsonSerializable
     public static function fromNotationAndSize(string $notation, Size $size): self
     {
         if (!preg_match(self::REGEX, $notation, $matches)) {
-            throw new InvalidScramble(sprintf('Invalid turn "%s", valid turns are %s', $notation, implode(', ', Face::casesAsStrings())));
+            throw new InvalidScramble(sprintf('Invalid turn "%s"', $notation));
         }
 
         $move = $matches['move'];
-        $isLowerCaseMove = $move === strtolower($move) && !in_array($move, ['x', 'y', 'z']);
-        if ($isLowerCaseMove) {
-            $move = strtoupper($move);
-        }
-
         $outerBlockIndicator = $matches['outerBlockIndicator'] ?? '';
         $slices = $matches['slices'] ?? null;
         if (!$outerBlockIndicator && $slices) {
@@ -57,7 +52,7 @@ class Turn implements \JsonSerializable
             $notation,
             Face::from($move),
             TurnType::getByTurnByModifier($matches['turnType'] ?? ''),
-            $isLowerCaseMove ? 2 : (int) $slices,
+            (int) $slices,
         );
     }
 

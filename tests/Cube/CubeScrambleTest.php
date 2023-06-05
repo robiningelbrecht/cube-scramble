@@ -47,12 +47,20 @@ class CubeScrambleTest extends TestCase
         $this->assertCount(21, explode(' ', (string) $scramble));
     }
 
-    public function itShouldThrowWhenEmptySize(): void
+    public function testItShouldThrowWhenEmptySizeOne(): void
     {
         $this->expectException(InvalidScramble::class);
         $this->expectExceptionMessage('Size is required');
 
         CubeScramble::fromNotation('L2');
+    }
+
+    public function testItShouldThrowWhenEmptySizeTwo(): void
+    {
+        $this->expectException(InvalidScramble::class);
+        $this->expectExceptionMessage('Size is required');
+
+        CubeScramble::random(10);
     }
 
     protected function getSnapshotId(): string
