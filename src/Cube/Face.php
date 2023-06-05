@@ -40,12 +40,4 @@ enum Face: string
             self::F, self::B => Plane::z,
         };
     }
-
-    /**
-     * @return string[]
-     */
-    public static function casesAsStrings(): array
-    {
-        return array_map(fn (Face $face) => $face->value, self::cases());
-    }
 }
