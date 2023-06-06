@@ -3,8 +3,8 @@
 namespace Tests\Cube;
 
 use PHPUnit\Framework\TestCase;
-use RobinIngelbrecht\CubeScramble\Cube\TurnType;
-use RobinIngelbrecht\CubeScramble\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\TurnType;
+use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 
 class TurnTypeTest extends TestCase
 {

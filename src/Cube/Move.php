@@ -1,6 +1,6 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble\Cube;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Cube;
 
 enum Move: string
 {

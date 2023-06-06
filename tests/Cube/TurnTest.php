@@ -3,9 +3,9 @@
 namespace Tests\Cube;
 
 use PHPUnit\Framework\TestCase;
-use RobinIngelbrecht\CubeScramble\Cube\Size;
-use RobinIngelbrecht\CubeScramble\Cube\Turn;
-use RobinIngelbrecht\CubeScramble\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Turn;
+use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 
 class TurnTest extends TestCase
 {

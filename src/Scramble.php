@@ -1,8 +1,8 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler;
 
-use RobinIngelbrecht\CubeScramble\Cube\Size;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
 
 interface Scramble extends \Stringable, \JsonSerializable
 {
@@ -11,7 +11,7 @@ interface Scramble extends \Stringable, \JsonSerializable
     public function reverse(): self;
 
     /**
-     * @return \RobinIngelbrecht\CubeScramble\Turn[]
+     * @return \RobinIngelbrecht\TwistyPuzzleScrambler\Turn[]
      */
     public function getTurns(): array;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble\Cube;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Cube;
 
-use RobinIngelbrecht\CubeScramble\InvalidScramble;
-use RobinIngelbrecht\CubeScramble\Turn as TurnBase;
+use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Turn as TurnBase;
 
 class Turn implements TurnBase
 {

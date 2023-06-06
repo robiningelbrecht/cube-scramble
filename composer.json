@@ -1,9 +1,10 @@
 {
-  "name": "robiningelbrecht/cube-scramble",
-  "description": "Verify and analyse cube scrambles",
+  "name": "robiningelbrecht/twisty-puzzle-scrambler",
+  "description": "Generate, verify and analyse twisty puzzle scrambles",
   "keywords": [
     "PHP",
     "Speedcubing",
+    "Twisty puzzles",
     "Rubik's Cube"
   ],
   "type": "library",
@@ -19,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "RobinIngelbrecht\\CubeScramble\\": "src/"
+      "RobinIngelbrecht\\TwistyPuzzleScrambler\\": "src/"
     }
   },
   "autoload-dev": {

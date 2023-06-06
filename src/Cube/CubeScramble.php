@@ -1,16 +1,16 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble\Cube;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Cube;
 
-use RobinIngelbrecht\CubeScramble\InvalidScramble;
-use RobinIngelbrecht\CubeScramble\Scramble;
-use RobinIngelbrecht\CubeScramble\ScrambleTrait;
+use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\ScrambleTrait;
 
 class CubeScramble implements Scramble
 {
     use ScrambleTrait;
 
-    /** @var \RobinIngelbrecht\CubeScramble\Turn[] */
+    /** @var \RobinIngelbrecht\TwistyPuzzleScrambler\Turn[] */
     private array $turns;
 
     private function __construct(

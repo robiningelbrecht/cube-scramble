@@ -3,9 +3,9 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use RobinIngelbrecht\CubeScramble\Cube\CubeScramble;
-use RobinIngelbrecht\CubeScramble\Cube\Size;
-use RobinIngelbrecht\CubeScramble\RandomScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\CubeScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
+use RobinIngelbrecht\TwistyPuzzleScrambler\RandomScramble;
 use Spatie\Snapshots\MatchesSnapshots;
 
 class RandomScrambleTest extends TestCase

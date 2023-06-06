@@ -1,6 +1,6 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler;
 
 interface Turn extends \JsonSerializable
 {

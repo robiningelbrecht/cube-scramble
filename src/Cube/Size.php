@@ -1,8 +1,8 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble\Cube;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Cube;
 
-use RobinIngelbrecht\CubeScramble\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 
 class Size implements \JsonSerializable, \Stringable
 {

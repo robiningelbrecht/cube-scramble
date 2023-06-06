@@ -1,6 +1,6 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler;
 
 class InvalidScramble extends \RuntimeException
 {

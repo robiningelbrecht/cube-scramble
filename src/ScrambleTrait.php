@@ -1,6 +1,6 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler;
 
 trait ScrambleTrait
 {
@@ -17,7 +17,7 @@ trait ScrambleTrait
     }
 
     /**
-     * @return \RobinIngelbrecht\CubeScramble\Turn[]
+     * @return \RobinIngelbrecht\TwistyPuzzleScrambler\Turn[]
      */
     protected function reverseTurns(): array
     {

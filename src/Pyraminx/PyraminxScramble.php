@@ -1,17 +1,17 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble\Pyraminx;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx;
 
-use RobinIngelbrecht\CubeScramble\Cube\Size;
-use RobinIngelbrecht\CubeScramble\Cube\Turn;
-use RobinIngelbrecht\CubeScramble\Scramble;
-use RobinIngelbrecht\CubeScramble\ScrambleTrait;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Turn;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\ScrambleTrait;
 
 class PyraminxScramble implements Scramble
 {
     use ScrambleTrait;
 
-    /** @var \RobinIngelbrecht\CubeScramble\Turn[] */
+    /** @var \RobinIngelbrecht\TwistyPuzzleScrambler\Turn[] */
     private array $turns;
 
     private function __construct(

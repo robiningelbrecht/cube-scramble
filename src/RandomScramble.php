@@ -1,9 +1,9 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler;
 
-use RobinIngelbrecht\CubeScramble\Cube\CubeScramble;
-use RobinIngelbrecht\CubeScramble\Cube\Size;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\CubeScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
 
 class RandomScramble
 {

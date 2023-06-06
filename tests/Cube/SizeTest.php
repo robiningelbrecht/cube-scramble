@@ -3,8 +3,8 @@
 namespace Tests\Cube;
 
 use PHPUnit\Framework\TestCase;
-use RobinIngelbrecht\CubeScramble\Cube\Size;
-use RobinIngelbrecht\CubeScramble\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
+use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 
 class SizeTest extends TestCase
 {
