@@ -1,6 +1,6 @@
 <?php
 
-namespace RobinIngelbrecht\TwistyPuzzleScrambler;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Turn;
 
 interface Move
 {

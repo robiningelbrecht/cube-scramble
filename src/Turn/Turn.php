@@ -2,8 +2,6 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Turn;
 
-use RobinIngelbrecht\TwistyPuzzleScrambler\Move;
-
 class Turn implements \JsonSerializable
 {
     private function __construct(
