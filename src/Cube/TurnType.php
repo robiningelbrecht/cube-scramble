@@ -3,8 +3,9 @@
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Cube;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\TurnType as TurnTypeBase;
 
-enum TurnType: string
+enum TurnType: string implements TurnTypeBase
 {
     case CLOCKWISE = 'clockwise';
     case COUNTER_CLOCKWISE = 'counterClockwise';

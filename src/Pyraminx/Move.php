@@ -2,7 +2,9 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx;
 
-enum Move: string
+use RobinIngelbrecht\TwistyPuzzleScrambler\Move as MoveBase;
+
+enum Move: string implements MoveBase
 {
     case U = 'U';
     case R = 'R';
@@ -24,6 +26,16 @@ enum Move: string
         ];
 
         return $moves[array_rand($moves)];
+    }
+
+    public function forHumans(): string
+    {
+        return match ($this) {
+            self::L, self::l => 'left',
+            self::R, self::r => 'right',
+            self::U, self::u => 'upper',
+            self::B, self::b => 'back',
+        };
     }
 
     /**

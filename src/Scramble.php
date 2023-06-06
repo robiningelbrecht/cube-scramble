@@ -11,7 +11,7 @@ interface Scramble extends \Stringable, \JsonSerializable
     public function reverse(): self;
 
     /**
-     * @return \RobinIngelbrecht\TwistyPuzzleScrambler\Turn[]
+     * @return \RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn[]
      */
     public function getTurns(): array;
 

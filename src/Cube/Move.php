@@ -2,7 +2,9 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Cube;
 
-enum Move: string
+use RobinIngelbrecht\TwistyPuzzleScrambler\Move as MoveBase;
+
+enum Move: string implements MoveBase
 {
     case U = 'U';
     case R = 'R';

@@ -3,15 +3,16 @@
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
-use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Turn;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\TurnType;
+use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
-use RobinIngelbrecht\TwistyPuzzleScrambler\ScrambleTrait;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
 class PyraminxScramble implements Scramble
 {
-    use ScrambleTrait;
+    private const REGEX = "/^(?<move>[UuFfRrDdLlBb])?(?<turnType>\\')?$/";
 
-    /** @var \RobinIngelbrecht\TwistyPuzzleScrambler\Turn[] */
+    /** @var \RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn[] */
     private array $turns;
 
     private function __construct(
@@ -60,7 +61,23 @@ class PyraminxScramble implements Scramble
 
     public static function fromNotation(string $notation, Size $size = null): Scramble
     {
-        // TODO: Implement fromNotation() method.
+        $turns = [];
+        foreach (explode(' ', $notation) as $turn) {
+            if (!preg_match(self::REGEX, $turn, $matches)) {
+                throw new InvalidScramble(sprintf('Invalid turn "%s"', $turn));
+            }
+
+            $move = $matches['move'];
+
+            $turns[] = Turn::fromMoveAndTurnTypeAndSlices(
+                $turn,
+                Move::from($move),
+                TurnType::getByTurnByModifier($matches['turnType'] ?? ''),
+                $move === strtolower($move) ? 2 : 1,
+            );
+        }
+
+        return new self(...$turns);
     }
 
     public function getTurns(): array
@@ -70,9 +87,22 @@ class PyraminxScramble implements Scramble
 
     public function reverse(): Scramble
     {
-        $this->turns = $this->reverseTurns();
+        $this->turns = array_map(
+            fn (Turn $turn) => $turn->getOpposite(),
+            array_reverse($this->getTurns())
+        );
 
         return $this;
+    }
+
+    public function forHumans(): string
+    {
+        return implode(PHP_EOL, array_map(fn (Turn $turn) => $turn->forHumans(), $this->getTurns()));
+    }
+
+    public function __toString(): string
+    {
+        return implode(' ', array_map(fn (Turn $turn) => $turn->getNotation(), $this->getTurns()));
     }
 
     /**

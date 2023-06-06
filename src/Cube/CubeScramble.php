@@ -4,13 +4,13 @@ namespace RobinIngelbrecht\TwistyPuzzleScrambler\Cube;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
-use RobinIngelbrecht\TwistyPuzzleScrambler\ScrambleTrait;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
 class CubeScramble implements Scramble
 {
-    use ScrambleTrait;
+    private const REGEX = "/^(?<slices>[2-9]+)?(?<move>[UFRDLB])(?<outerBlockIndicator>w)?(?<turnType>\d+\\'|\\'\d+|\d+|\\')?$/";
 
-    /** @var \RobinIngelbrecht\TwistyPuzzleScrambler\Turn[] */
+    /** @var \RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn[] */
     private array $turns;
 
     private function __construct(
@@ -58,10 +58,36 @@ class CubeScramble implements Scramble
             throw new InvalidScramble('Size is required');
         }
 
-        $turns = array_map(
-            fn (string $turnNotation) => Turn::fromNotationAndSize($turnNotation, $size),
-            explode(' ', $notation)
-        );
+        $turns = [];
+        foreach (explode(' ', $notation) as $turn) {
+            if (!preg_match(self::REGEX, $turn, $matches)) {
+                throw new InvalidScramble(sprintf('Invalid turn "%s"', $turn));
+            }
+
+            $move = $matches['move'];
+            $outerBlockIndicator = $matches['outerBlockIndicator'] ?? '';
+            $slices = $matches['slices'] ?: null;
+            if (!$outerBlockIndicator && $slices) {
+                throw new InvalidScramble(sprintf('Invalid turn "%s", cannot specify number of slices if outer block move indicator "w" is not present', $turn));
+            }
+
+            if ($outerBlockIndicator && !$slices) {
+                $slices = 2;
+            }
+
+            $slices = $slices ?? 1;
+
+            if ($slices > $size->getMaxSlices()) {
+                throw new InvalidScramble(sprintf('Invalid turn "%s", slice cannot be greater than %s', $turn, $size->getMaxSlices()));
+            }
+
+            $turns[] = Turn::fromMoveAndTurnTypeAndSlices(
+                $turn,
+                Move::from($move),
+                TurnType::getByTurnByModifier($matches['turnType'] ?? ''),
+                $move === strtolower($move) ? 2 : (int) $slices,
+            );
+        }
 
         return new self($size, ...$turns);
     }
@@ -78,9 +104,22 @@ class CubeScramble implements Scramble
 
     public function reverse(): Scramble
     {
-        $this->turns = $this->reverseTurns();
+        $this->turns = array_map(
+            fn (Turn $turn) => $turn->getOpposite(),
+            array_reverse($this->getTurns())
+        );
 
         return $this;
+    }
+
+    public function forHumans(): string
+    {
+        return implode(PHP_EOL, array_map(fn (Turn $turn) => $turn->forHumans(), $this->getTurns()));
+    }
+
+    public function __toString(): string
+    {
+        return implode(' ', array_map(fn (Turn $turn) => $turn->getNotation(), $this->getTurns()));
     }
 
     /**
