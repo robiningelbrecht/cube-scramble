@@ -13,7 +13,7 @@ enum Move: string
 
     public static function random(): self
     {
-        $moves = Move::cases();
+        $moves = self::cases();
 
         return $moves[array_rand($moves)];
     }

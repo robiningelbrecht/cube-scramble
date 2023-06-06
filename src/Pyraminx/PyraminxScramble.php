@@ -22,7 +22,40 @@ class PyraminxScramble implements Scramble
 
     public static function random(int $scrambleSize, Size $size = null): Scramble
     {
-        // TODO: Implement random() method.
+        $turns = [];
+        $previousMove = null;
+
+        for ($i = 0; $i < $scrambleSize; ++$i) {
+            do {
+                $newMove = Move::random();
+            } while ($previousMove && $previousMove === $newMove);
+
+            $turnType = TurnType::random();
+
+            $turns[] = Turn::fromMoveAndTurnTypeAndSlices(
+                $newMove->value.$turnType->getModifier(),
+                $newMove,
+                $turnType,
+                1
+            );
+
+            $previousMove = $newMove;
+        }
+
+        $wideMoves = Move::wideMoves();
+        shuffle($wideMoves);
+        for ($i = 0; $i < rand(1, 4); ++$i) {
+            $move = $wideMoves[$i];
+            $turnType = TurnType::random();
+            $turns[] = Turn::fromMoveAndTurnTypeAndSlices(
+                $move->value.$turnType->getModifier(),
+                $move,
+                $turnType,
+                2
+            );
+        }
+
+        return new self(...$turns);
     }
 
     public static function fromNotation(string $notation, Size $size = null): Scramble
