@@ -3,26 +3,27 @@
 namespace RobinIngelbrecht\CubeScramble\Cube;
 
 use RobinIngelbrecht\CubeScramble\InvalidScramble;
+use RobinIngelbrecht\CubeScramble\Turn as TurnBase;
 
-class Turn implements \JsonSerializable
+class Turn implements TurnBase
 {
     private const REGEX = "/^(?<slices>[2-9]+)?(?<move>[UFRDLB])(?<outerBlockIndicator>w)?(?<turnType>\d+\\'|\\'\d+|\d+|\\')?$/";
 
     private function __construct(
         private readonly string $notation,
-        private readonly Face $face,
+        private readonly Move $move,
         private readonly TurnType $turnType,
         private readonly int $slices,
     ) {
     }
 
-    public static function fromFaceAndTurnTypeAndSlices(
+    public static function fromMoveAndTurnTypeAndSlices(
         string $notation,
-        Face $face,
+        Move $move,
         TurnType $turnType,
         int $slices,
     ): self {
-        return new self($notation, $face, $turnType, $slices);
+        return new self($notation, $move, $turnType, $slices);
     }
 
     public static function fromNotationAndSize(string $notation, Size $size): self
@@ -33,7 +34,7 @@ class Turn implements \JsonSerializable
 
         $move = $matches['move'];
         $outerBlockIndicator = $matches['outerBlockIndicator'] ?? '';
-        $slices = $matches['slices'] ?? null;
+        $slices = $matches['slices'] ?: null;
         if (!$outerBlockIndicator && $slices) {
             throw new InvalidScramble(sprintf('Invalid turn "%s", cannot specify number of slices if outer block move indicator "w" is not present', $notation));
         }
@@ -48,11 +49,11 @@ class Turn implements \JsonSerializable
             throw new InvalidScramble(sprintf('Invalid turn "%s", slice cannot be greater than %s', $notation, $size->getMaxSlices()));
         }
 
-        return Turn::fromFaceAndTurnTypeAndSlices(
+        return Turn::fromMoveAndTurnTypeAndSlices(
             $notation,
-            Face::from($move),
+            Move::from($move),
             TurnType::getByTurnByModifier($matches['turnType'] ?? ''),
-            (int) $slices,
+            $move === strtolower($move) ? 2 : (int) $slices,
         );
     }
 
@@ -63,9 +64,9 @@ class Turn implements \JsonSerializable
             $notation = str_contains($this->getNotation(), "'") ? str_replace("'", '', $this->getNotation()) : $this->getNotation()."'";
         }
 
-        return self::fromFaceAndTurnTypeAndSlices(
+        return self::fromMoveAndTurnTypeAndSlices(
             $notation,
-            $this->getFace(),
+            $this->getMove(),
             $this->getTurnType()->getOpposite(),
             $this->getSlices()
         );
@@ -76,9 +77,9 @@ class Turn implements \JsonSerializable
         return $this->notation;
     }
 
-    public function getFace(): Face
+    public function getMove(): Move
     {
-        return $this->face;
+        return $this->move;
     }
 
     public function getTurnType(): TurnType
@@ -93,20 +94,14 @@ class Turn implements \JsonSerializable
 
     public function forHumans(): string
     {
-        if ($turn = $this->getTurnType()->forHumans()) {
-            return sprintf(
-                'Turn the %s face %s degrees %s',
-                $this->getFace()->forHumans(),
-                $this->getTurnType()->getDegrees(),
-                $turn
-            );
-        }
-
-        return sprintf(
-            'Turn the %s face %s degrees',
-            $this->getFace()->forHumans(),
+        return trim(sprintf(
+            'Turn the %s%s layer%s %s degrees %s',
+            $this->getSlices() > 1 ? $this->getSlices().' ' : '',
+            $this->getMove()->forHumans(),
+            $this->getSlices() > 1 ? 's' : '',
             $this->getTurnType()->getDegrees(),
-        );
+            $this->getTurnType()->forHumans()
+        ));
     }
 
     /**
@@ -116,9 +111,10 @@ class Turn implements \JsonSerializable
     {
         return [
             'notation' => $this->getNotation(),
-            'face' => $this->getFace(),
+            'move' => $this->getMove(),
             'turnType' => $this->getTurnType(),
             'slices' => $this->getSlices(),
+            'forHumans' => $this->forHumans(),
         ];
     }
 }

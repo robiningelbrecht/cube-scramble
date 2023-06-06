@@ -1,9 +1,0 @@
-Turn the front face 180 degrees
-Turn the upper face 90 degrees counterclockwise
-Turn the right face 90 degrees clockwise
-Turn the upper face 180 degrees
-Turn the right face 90 degrees clockwise
-Turn the upper face 90 degrees clockwise
-Turn the right face 90 degrees counterclockwise
-Turn the front face 90 degrees counterclockwise
-Turn the right face 90 degrees clockwise

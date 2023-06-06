@@ -66,6 +66,7 @@ class CubeScrambleTest extends TestCase
     protected function getSnapshotId(): string
     {
         return (new \ReflectionClass($this))->getShortName().'--'.
+            $this->name().'--'.
             $this->snapshotName.'--'.
             $this->snapshotIncrementor;
     }

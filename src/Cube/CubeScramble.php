@@ -4,10 +4,13 @@ namespace RobinIngelbrecht\CubeScramble\Cube;
 
 use RobinIngelbrecht\CubeScramble\InvalidScramble;
 use RobinIngelbrecht\CubeScramble\Scramble;
+use RobinIngelbrecht\CubeScramble\ScrambleTrait;
 
-class CubeScramble implements Scramble, \JsonSerializable
+class CubeScramble implements Scramble
 {
-    /** @var \RobinIngelbrecht\CubeScramble\Cube\Turn[] */
+    use ScrambleTrait;
+
+    /** @var \RobinIngelbrecht\CubeScramble\Turn[] */
     private array $turns;
 
     private function __construct(
@@ -24,26 +27,26 @@ class CubeScramble implements Scramble, \JsonSerializable
         }
 
         $turns = [];
-        $previousFace = null;
+        $previousMove = null;
 
         for ($i = 0; $i < $scrambleSize; ++$i) {
             do {
-                $newFace = Face::random();
-            } while ($previousFace && $previousFace->getPlane() === $newFace->getPlane());
+                $newMove = Move::random();
+            } while ($previousMove && $previousMove->getPlane() === $newMove->getPlane());
 
             $slices = mt_rand(1, $size->getMaxSlices());
             $depthLayer = $slices > 2 ? $slices : '';
             $sliceIndicator = $slices > 1 ? 'w' : '';
             $turnType = TurnType::random();
 
-            $turns[] = Turn::fromFaceAndTurnTypeAndSlices(
-                $depthLayer.$newFace->value.$sliceIndicator.$turnType->getModifier(),
-                $newFace,
+            $turns[] = Turn::fromMoveAndTurnTypeAndSlices(
+                $depthLayer.$newMove->value.$sliceIndicator.$turnType->getModifier(),
+                $newMove,
                 $turnType,
                 $slices
             );
 
-            $previousFace = $newFace;
+            $previousMove = $newMove;
         }
 
         return new self($size, ...$turns);
@@ -68,32 +71,16 @@ class CubeScramble implements Scramble, \JsonSerializable
         return $this->size;
     }
 
-    /**
-     * @return \RobinIngelbrecht\CubeScramble\Cube\Turn[]
-     */
     public function getTurns(): array
     {
         return $this->turns;
     }
 
-    public function reverse(): self
+    public function reverse(): Scramble
     {
-        $this->turns = array_map(
-            fn (Turn $turn) => $turn->getOpposite(),
-            array_reverse($this->turns)
-        );
+        $this->turns = $this->reverseTurns();
 
         return $this;
-    }
-
-    public function forHumans(): string
-    {
-        return implode(PHP_EOL, array_map(fn (Turn $turn) => $turn->forHumans(), $this->getTurns()));
-    }
-
-    public function __toString(): string
-    {
-        return implode(' ', array_map(fn (Turn $turn) => $turn->getNotation(), $this->getTurns()));
     }
 
     /**

@@ -2,9 +2,7 @@
 
 namespace RobinIngelbrecht\CubeScramble\Cube;
 
-use RobinIngelbrecht\CubeScramble\Plane;
-
-enum Face: string
+enum Move: string
 {
     case U = 'U';
     case R = 'R';
@@ -15,9 +13,9 @@ enum Face: string
 
     public static function random(): self
     {
-        $faces = Face::cases();
+        $moves = Move::cases();
 
-        return $faces[array_rand($faces)];
+        return $moves[array_rand($moves)];
     }
 
     public function forHumans(): string

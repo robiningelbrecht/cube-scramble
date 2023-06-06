@@ -1,0 +1,425 @@
+{
+    "size": 5,
+    "turns": [
+        {
+            "notation": "Lw'",
+            "move": "L",
+            "turnType": "counterClockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 left layers 90 degrees counterclockwise"
+        },
+        {
+            "notation": "F2",
+            "move": "F",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the front layer 180 degrees"
+        },
+        {
+            "notation": "D'",
+            "move": "D",
+            "turnType": "counterClockwise",
+            "slices": 1,
+            "forHumans": "Turn the bottom layer 90 degrees counterclockwise"
+        },
+        {
+            "notation": "L",
+            "move": "L",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the left layer 90 degrees clockwise"
+        },
+        {
+            "notation": "Bw2",
+            "move": "B",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 back layers 180 degrees"
+        },
+        {
+            "notation": "D'",
+            "move": "D",
+            "turnType": "counterClockwise",
+            "slices": 1,
+            "forHumans": "Turn the bottom layer 90 degrees counterclockwise"
+        },
+        {
+            "notation": "Rw",
+            "move": "R",
+            "turnType": "clockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 right layers 90 degrees clockwise"
+        },
+        {
+            "notation": "Fw",
+            "move": "F",
+            "turnType": "clockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 front layers 90 degrees clockwise"
+        },
+        {
+            "notation": "Bw",
+            "move": "B",
+            "turnType": "clockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 back layers 90 degrees clockwise"
+        },
+        {
+            "notation": "R2",
+            "move": "R",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the right layer 180 degrees"
+        },
+        {
+            "notation": "Uw",
+            "move": "U",
+            "turnType": "clockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 upper layers 90 degrees clockwise"
+        },
+        {
+            "notation": "Lw2",
+            "move": "L",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 left layers 180 degrees"
+        },
+        {
+            "notation": "Dw'",
+            "move": "D",
+            "turnType": "counterClockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 bottom layers 90 degrees counterclockwise"
+        },
+        {
+            "notation": "F",
+            "move": "F",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the front layer 90 degrees clockwise"
+        },
+        {
+            "notation": "Fw2",
+            "move": "F",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 front layers 180 degrees"
+        },
+        {
+            "notation": "Dw'",
+            "move": "D",
+            "turnType": "counterClockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 bottom layers 90 degrees counterclockwise"
+        },
+        {
+            "notation": "Lw2",
+            "move": "L",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 left layers 180 degrees"
+        },
+        {
+            "notation": "Rw2",
+            "move": "R",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 right layers 180 degrees"
+        },
+        {
+            "notation": "Fw2",
+            "move": "F",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 front layers 180 degrees"
+        },
+        {
+            "notation": "D",
+            "move": "D",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the bottom layer 90 degrees clockwise"
+        },
+        {
+            "notation": "R2",
+            "move": "R",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the right layer 180 degrees"
+        },
+        {
+            "notation": "D'",
+            "move": "D",
+            "turnType": "counterClockwise",
+            "slices": 1,
+            "forHumans": "Turn the bottom layer 90 degrees counterclockwise"
+        },
+        {
+            "notation": "Bw2",
+            "move": "B",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 back layers 180 degrees"
+        },
+        {
+            "notation": "Rw2",
+            "move": "R",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 right layers 180 degrees"
+        },
+        {
+            "notation": "Bw'",
+            "move": "B",
+            "turnType": "counterClockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 back layers 90 degrees counterclockwise"
+        },
+        {
+            "notation": "L",
+            "move": "L",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the left layer 90 degrees clockwise"
+        },
+        {
+            "notation": "R2",
+            "move": "R",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the right layer 180 degrees"
+        },
+        {
+            "notation": "U",
+            "move": "U",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the upper layer 90 degrees clockwise"
+        },
+        {
+            "notation": "Dw'",
+            "move": "D",
+            "turnType": "counterClockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 bottom layers 90 degrees counterclockwise"
+        },
+        {
+            "notation": "R",
+            "move": "R",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the right layer 90 degrees clockwise"
+        },
+        {
+            "notation": "Bw'",
+            "move": "B",
+            "turnType": "counterClockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 back layers 90 degrees counterclockwise"
+        },
+        {
+            "notation": "B",
+            "move": "B",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the back layer 90 degrees clockwise"
+        },
+        {
+            "notation": "Rw",
+            "move": "R",
+            "turnType": "clockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 right layers 90 degrees clockwise"
+        },
+        {
+            "notation": "Bw2",
+            "move": "B",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 back layers 180 degrees"
+        },
+        {
+            "notation": "F",
+            "move": "F",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the front layer 90 degrees clockwise"
+        },
+        {
+            "notation": "Dw2",
+            "move": "D",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 bottom layers 180 degrees"
+        },
+        {
+            "notation": "L",
+            "move": "L",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the left layer 90 degrees clockwise"
+        },
+        {
+            "notation": "R2",
+            "move": "R",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the right layer 180 degrees"
+        },
+        {
+            "notation": "F2",
+            "move": "F",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the front layer 180 degrees"
+        },
+        {
+            "notation": "Dw2",
+            "move": "D",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 bottom layers 180 degrees"
+        },
+        {
+            "notation": "U2",
+            "move": "U",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the upper layer 180 degrees"
+        },
+        {
+            "notation": "Bw'",
+            "move": "B",
+            "turnType": "counterClockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 back layers 90 degrees counterclockwise"
+        },
+        {
+            "notation": "Dw",
+            "move": "D",
+            "turnType": "clockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 bottom layers 90 degrees clockwise"
+        },
+        {
+            "notation": "F2",
+            "move": "F",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the front layer 180 degrees"
+        },
+        {
+            "notation": "Lw'",
+            "move": "L",
+            "turnType": "counterClockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 left layers 90 degrees counterclockwise"
+        },
+        {
+            "notation": "B",
+            "move": "B",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the back layer 90 degrees clockwise"
+        },
+        {
+            "notation": "R'",
+            "move": "R",
+            "turnType": "counterClockwise",
+            "slices": 1,
+            "forHumans": "Turn the right layer 90 degrees counterclockwise"
+        },
+        {
+            "notation": "L'",
+            "move": "L",
+            "turnType": "counterClockwise",
+            "slices": 1,
+            "forHumans": "Turn the left layer 90 degrees counterclockwise"
+        },
+        {
+            "notation": "U'",
+            "move": "U",
+            "turnType": "counterClockwise",
+            "slices": 1,
+            "forHumans": "Turn the upper layer 90 degrees counterclockwise"
+        },
+        {
+            "notation": "F2",
+            "move": "F",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the front layer 180 degrees"
+        },
+        {
+            "notation": "Bw",
+            "move": "B",
+            "turnType": "clockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 back layers 90 degrees clockwise"
+        },
+        {
+            "notation": "R",
+            "move": "R",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the right layer 90 degrees clockwise"
+        },
+        {
+            "notation": "Fw2",
+            "move": "F",
+            "turnType": "double",
+            "slices": 2,
+            "forHumans": "Turn the 2 front layers 180 degrees"
+        },
+        {
+            "notation": "F2",
+            "move": "F",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the front layer 180 degrees"
+        },
+        {
+            "notation": "D2",
+            "move": "D",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the bottom layer 180 degrees"
+        },
+        {
+            "notation": "B2",
+            "move": "B",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the back layer 180 degrees"
+        },
+        {
+            "notation": "R",
+            "move": "R",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the right layer 90 degrees clockwise"
+        },
+        {
+            "notation": "L2",
+            "move": "L",
+            "turnType": "double",
+            "slices": 1,
+            "forHumans": "Turn the left layer 180 degrees"
+        },
+        {
+            "notation": "Bw'",
+            "move": "B",
+            "turnType": "counterClockwise",
+            "slices": 2,
+            "forHumans": "Turn the 2 back layers 90 degrees counterclockwise"
+        },
+        {
+            "notation": "F",
+            "move": "F",
+            "turnType": "clockwise",
+            "slices": 1,
+            "forHumans": "Turn the front layer 90 degrees clockwise"
+        }
+    ]
+}

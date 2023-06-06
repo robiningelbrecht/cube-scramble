@@ -1,0 +1,80 @@
+Turn the 2 right layers 90 degrees clockwise
+Turn the left layer 180 degrees
+Turn the 3 upper layers 90 degrees counterclockwise
+Turn the left layer 90 degrees counterclockwise
+Turn the front layer 90 degrees counterclockwise
+Turn the 2 upper layers 180 degrees
+Turn the bottom layer 180 degrees
+Turn the 2 left layers 90 degrees counterclockwise
+Turn the 3 upper layers 180 degrees
+Turn the upper layer 180 degrees
+Turn the front layer 90 degrees counterclockwise
+Turn the 3 upper layers 90 degrees counterclockwise
+Turn the 3 front layers 90 degrees clockwise
+Turn the 2 back layers 90 degrees clockwise
+Turn the right layer 90 degrees clockwise
+Turn the 3 front layers 90 degrees counterclockwise
+Turn the back layer 90 degrees counterclockwise
+Turn the upper layer 180 degrees
+Turn the 2 back layers 180 degrees
+Turn the bottom layer 90 degrees clockwise
+Turn the 2 back layers 180 degrees
+Turn the 3 front layers 90 degrees counterclockwise
+Turn the 2 front layers 90 degrees counterclockwise
+Turn the left layer 90 degrees clockwise
+Turn the 2 upper layers 90 degrees clockwise
+Turn the back layer 90 degrees clockwise
+Turn the 3 front layers 90 degrees counterclockwise
+Turn the 2 upper layers 90 degrees clockwise
+Turn the bottom layer 90 degrees clockwise
+Turn the 3 right layers 180 degrees
+Turn the back layer 90 degrees counterclockwise
+Turn the 2 right layers 180 degrees
+Turn the 2 upper layers 180 degrees
+Turn the 3 right layers 90 degrees counterclockwise
+Turn the 2 front layers 90 degrees counterclockwise
+Turn the upper layer 90 degrees counterclockwise
+Turn the back layer 180 degrees
+Turn the 2 front layers 180 degrees
+Turn the 2 bottom layers 90 degrees clockwise
+Turn the 2 upper layers 90 degrees counterclockwise
+Turn the 2 left layers 180 degrees
+Turn the front layer 180 degrees
+Turn the 2 right layers 180 degrees
+Turn the 2 upper layers 90 degrees clockwise
+Turn the upper layer 90 degrees clockwise
+Turn the bottom layer 90 degrees counterclockwise
+Turn the right layer 90 degrees clockwise
+Turn the left layer 180 degrees
+Turn the 2 front layers 90 degrees clockwise
+Turn the 2 upper layers 90 degrees counterclockwise
+Turn the 3 front layers 180 degrees
+Turn the back layer 90 degrees counterclockwise
+Turn the 2 upper layers 90 degrees counterclockwise
+Turn the 2 back layers 90 degrees clockwise
+Turn the 2 right layers 180 degrees
+Turn the 3 front layers 90 degrees clockwise
+Turn the 2 upper layers 90 degrees clockwise
+Turn the front layer 180 degrees
+Turn the 3 front layers 180 degrees
+Turn the right layer 90 degrees clockwise
+Turn the 2 bottom layers 180 degrees
+Turn the 2 upper layers 90 degrees counterclockwise
+Turn the left layer 90 degrees counterclockwise
+Turn the front layer 90 degrees clockwise
+Turn the right layer 90 degrees counterclockwise
+Turn the 2 right layers 90 degrees clockwise
+Turn the 3 front layers 180 degrees
+Turn the front layer 180 degrees
+Turn the 2 back layers 90 degrees clockwise
+Turn the right layer 90 degrees counterclockwise
+Turn the 2 back layers 90 degrees clockwise
+Turn the 2 right layers 90 degrees counterclockwise
+Turn the upper layer 90 degrees clockwise
+Turn the 2 right layers 90 degrees counterclockwise
+Turn the 3 front layers 180 degrees
+Turn the 3 right layers 180 degrees
+Turn the 2 front layers 90 degrees clockwise
+Turn the right layer 180 degrees
+Turn the 3 front layers 90 degrees clockwise
+Turn the 3 upper layers 90 degrees counterclockwise

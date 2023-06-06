@@ -1,6 +1,6 @@
 <?php
 
-namespace RobinIngelbrecht\CubeScramble;
+namespace RobinIngelbrecht\CubeScramble\Cube;
 
 enum Plane: string
 {
