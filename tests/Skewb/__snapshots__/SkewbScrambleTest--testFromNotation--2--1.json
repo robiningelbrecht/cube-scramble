@@ -12,7 +12,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 1,
-            "forHumans": "Turn the upper layer 90 degrees counterclockwise"
+            "forHumans": "Turn the top layer 90 degrees counterclockwise"
         },
         {
             "notation": "L'",
@@ -61,7 +61,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 1,
-            "forHumans": "Turn the upper layer 90 degrees counterclockwise"
+            "forHumans": "Turn the top layer 90 degrees counterclockwise"
         }
     ]
 }

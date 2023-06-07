@@ -1,19 +1,22 @@
 <?php
 
-namespace RobinIngelbrecht\TwistyPuzzleScrambler\Skewb;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Move as MoveBase;
 
 enum Move: string implements MoveBase
 {
-    case U = 'U';
     case R = 'R';
-    case L = 'L';
-    case B = 'B';
+    case D = 'D';
+
+    case U = 'U';
 
     public static function random(): self
     {
-        $moves = self::cases();
+        $moves = [
+            self::R,
+            self::D,
+        ];
 
         return $moves[array_rand($moves)];
     }
@@ -21,10 +24,9 @@ enum Move: string implements MoveBase
     public function forHumans(): string
     {
         return match ($this) {
-            self::L, => 'left',
-            self::R => 'right',
+            self::R => 'left',
+            self::D => 'right',
             self::U => 'top',
-            self::B => 'back',
         };
     }
 }

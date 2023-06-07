@@ -33,7 +33,7 @@ enum Move: string implements MoveBase
         return match ($this) {
             self::L, self::l => 'left',
             self::R, self::r => 'right',
-            self::U, self::u => 'upper',
+            self::U, self::u => 'top',
             self::B, self::b => 'back',
         };
     }

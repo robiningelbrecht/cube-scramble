@@ -20,7 +20,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 3,
-            "forHumans": "Turn the 3 upper layers 90 degrees counterclockwise"
+            "forHumans": "Turn the 3 top layers 90 degrees counterclockwise"
         },
         {
             "notation": "L'",
@@ -41,7 +41,7 @@
             "move": "U",
             "turnType": "double",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 180 degrees"
+            "forHumans": "Turn the 2 top layers 180 degrees"
         },
         {
             "notation": "D2",
@@ -62,14 +62,14 @@
             "move": "U",
             "turnType": "double",
             "slices": 3,
-            "forHumans": "Turn the 3 upper layers 180 degrees"
+            "forHumans": "Turn the 3 top layers 180 degrees"
         },
         {
             "notation": "U2",
             "move": "U",
             "turnType": "double",
             "slices": 1,
-            "forHumans": "Turn the upper layer 180 degrees"
+            "forHumans": "Turn the top layer 180 degrees"
         },
         {
             "notation": "F'",
@@ -83,7 +83,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 3,
-            "forHumans": "Turn the 3 upper layers 90 degrees counterclockwise"
+            "forHumans": "Turn the 3 top layers 90 degrees counterclockwise"
         },
         {
             "notation": "3Fw",
@@ -125,7 +125,7 @@
             "move": "U",
             "turnType": "double",
             "slices": 1,
-            "forHumans": "Turn the upper layer 180 degrees"
+            "forHumans": "Turn the top layer 180 degrees"
         },
         {
             "notation": "Bw2",
@@ -174,7 +174,7 @@
             "move": "U",
             "turnType": "clockwise",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 90 degrees clockwise"
+            "forHumans": "Turn the 2 top layers 90 degrees clockwise"
         },
         {
             "notation": "B",
@@ -195,7 +195,7 @@
             "move": "U",
             "turnType": "clockwise",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 90 degrees clockwise"
+            "forHumans": "Turn the 2 top layers 90 degrees clockwise"
         },
         {
             "notation": "D",
@@ -230,7 +230,7 @@
             "move": "U",
             "turnType": "double",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 180 degrees"
+            "forHumans": "Turn the 2 top layers 180 degrees"
         },
         {
             "notation": "3Rw'",
@@ -251,7 +251,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 1,
-            "forHumans": "Turn the upper layer 90 degrees counterclockwise"
+            "forHumans": "Turn the top layer 90 degrees counterclockwise"
         },
         {
             "notation": "B2",
@@ -279,7 +279,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 90 degrees counterclockwise"
+            "forHumans": "Turn the 2 top layers 90 degrees counterclockwise"
         },
         {
             "notation": "Lw2",
@@ -307,14 +307,14 @@
             "move": "U",
             "turnType": "clockwise",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 90 degrees clockwise"
+            "forHumans": "Turn the 2 top layers 90 degrees clockwise"
         },
         {
             "notation": "U",
             "move": "U",
             "turnType": "clockwise",
             "slices": 1,
-            "forHumans": "Turn the upper layer 90 degrees clockwise"
+            "forHumans": "Turn the top layer 90 degrees clockwise"
         },
         {
             "notation": "D'",
@@ -349,7 +349,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 90 degrees counterclockwise"
+            "forHumans": "Turn the 2 top layers 90 degrees counterclockwise"
         },
         {
             "notation": "3Fw2",
@@ -370,7 +370,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 90 degrees counterclockwise"
+            "forHumans": "Turn the 2 top layers 90 degrees counterclockwise"
         },
         {
             "notation": "Bw",
@@ -398,7 +398,7 @@
             "move": "U",
             "turnType": "clockwise",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 90 degrees clockwise"
+            "forHumans": "Turn the 2 top layers 90 degrees clockwise"
         },
         {
             "notation": "F2",
@@ -433,7 +433,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 2,
-            "forHumans": "Turn the 2 upper layers 90 degrees counterclockwise"
+            "forHumans": "Turn the 2 top layers 90 degrees counterclockwise"
         },
         {
             "notation": "L'",
@@ -510,7 +510,7 @@
             "move": "U",
             "turnType": "clockwise",
             "slices": 1,
-            "forHumans": "Turn the upper layer 90 degrees clockwise"
+            "forHumans": "Turn the top layer 90 degrees clockwise"
         },
         {
             "notation": "Rw'",
@@ -559,7 +559,7 @@
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 3,
-            "forHumans": "Turn the 3 upper layers 90 degrees counterclockwise"
+            "forHumans": "Turn the 3 top layers 90 degrees counterclockwise"
         }
     ]
 }

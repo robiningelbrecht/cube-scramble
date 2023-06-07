@@ -47,7 +47,7 @@
             "move": "U",
             "turnType": "clockwise",
             "slices": 1,
-            "forHumans": "Turn the upper layer 90 degrees clockwise"
+            "forHumans": "Turn the top layer 90 degrees clockwise"
         },
         {
             "notation": "B'",

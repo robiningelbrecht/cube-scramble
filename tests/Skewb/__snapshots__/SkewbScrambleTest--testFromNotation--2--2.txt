@@ -1,9 +1,9 @@
 Turn the left layer 90 degrees counterclockwise
-Turn the upper layer 90 degrees counterclockwise
+Turn the top layer 90 degrees counterclockwise
 Turn the left layer 90 degrees counterclockwise
 Turn the back layer 90 degrees counterclockwise
 Turn the right layer 90 degrees counterclockwise
 Turn the left layer 90 degrees counterclockwise
 Turn the back layer 90 degrees counterclockwise
 Turn the left layer 90 degrees clockwise
-Turn the upper layer 90 degrees counterclockwise
+Turn the top layer 90 degrees counterclockwise
