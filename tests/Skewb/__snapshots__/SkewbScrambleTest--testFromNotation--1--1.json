@@ -4,64 +4,64 @@
             "notation": "L'",
             "move": "L",
             "turnType": "counterClockwise",
-            "slices": 1,
-            "forHumans": "Turn the left layer 90 degrees counterclockwise"
+            "slices": 2,
+            "forHumans": "Turn the left layer, including the tip, counterclockwise"
         },
         {
             "notation": "B'",
             "move": "B",
             "turnType": "counterClockwise",
-            "slices": 1,
-            "forHumans": "Turn the back layer 90 degrees counterclockwise"
+            "slices": 2,
+            "forHumans": "Turn the back layer, including the tip, counterclockwise"
         },
         {
             "notation": "L'",
             "move": "L",
             "turnType": "counterClockwise",
-            "slices": 1,
-            "forHumans": "Turn the left layer 90 degrees counterclockwise"
+            "slices": 2,
+            "forHumans": "Turn the left layer, including the tip, counterclockwise"
         },
         {
             "notation": "U",
             "move": "U",
             "turnType": "clockwise",
-            "slices": 1,
-            "forHumans": "Turn the top layer 90 degrees clockwise"
+            "slices": 2,
+            "forHumans": "Turn the top layer, including the tip, clockwise"
         },
         {
             "notation": "B'",
             "move": "B",
             "turnType": "counterClockwise",
-            "slices": 1,
-            "forHumans": "Turn the back layer 90 degrees counterclockwise"
+            "slices": 2,
+            "forHumans": "Turn the back layer, including the tip, counterclockwise"
         },
         {
             "notation": "U'",
             "move": "U",
             "turnType": "counterClockwise",
-            "slices": 1,
-            "forHumans": "Turn the top layer 90 degrees counterclockwise"
+            "slices": 2,
+            "forHumans": "Turn the top layer, including the tip, counterclockwise"
         },
         {
             "notation": "R'",
             "move": "R",
             "turnType": "counterClockwise",
-            "slices": 1,
-            "forHumans": "Turn the right layer 90 degrees counterclockwise"
+            "slices": 2,
+            "forHumans": "Turn the right layer, including the tip, counterclockwise"
         },
         {
             "notation": "U'",
             "move": "U",
             "turnType": "counterClockwise",
-            "slices": 1,
-            "forHumans": "Turn the top layer 90 degrees counterclockwise"
+            "slices": 2,
+            "forHumans": "Turn the top layer, including the tip, counterclockwise"
         },
         {
             "notation": "B'",
             "move": "B",
             "turnType": "counterClockwise",
-            "slices": 1,
-            "forHumans": "Turn the back layer 90 degrees counterclockwise"
+            "slices": 2,
+            "forHumans": "Turn the back layer, including the tip, counterclockwise"
         }
     ]
 }

@@ -41,7 +41,7 @@ enum Move: string implements MoveBase
     /**
      * @return \RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx\Move[]
      */
-    public static function wideMoves(): array
+    public static function cornerMoves(): array
     {
         return [
             self::u,

@@ -27,7 +27,8 @@ class SkewbScramble extends Scramble
                 $newMove->value.$turnType->getModifier(),
                 $newMove,
                 $turnType,
-                1
+                2,
+                new ForHumans()
             );
 
             $previousMove = $newMove;
@@ -50,7 +51,8 @@ class SkewbScramble extends Scramble
                 $turn,
                 Move::from($move),
                 SimpleTurnType::getByTurnByModifier($matches['turnType'] ?? ''),
-                1,
+                2,
+                new ForHumans()
             );
         }
 

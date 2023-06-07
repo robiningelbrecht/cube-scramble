@@ -27,22 +27,24 @@ class PyraminxScramble extends Scramble
                 $newMove->value.$turnType->getModifier(),
                 $newMove,
                 $turnType,
-                1
+                2,
+                new ForHumans()
             );
 
             $previousMove = $newMove;
         }
 
-        $wideMoves = Move::wideMoves();
-        shuffle($wideMoves);
+        $cornerMoves = Move::cornerMoves();
+        shuffle($cornerMoves);
         for ($i = 0; $i < rand(1, 4); ++$i) {
-            $move = $wideMoves[$i];
+            $move = $cornerMoves[$i];
             $turnType = SimpleTurnType::random();
             $turns[] = Turn::fromMoveAndTurnTypeAndSlices(
                 $move->value.$turnType->getModifier(),
                 $move,
                 $turnType,
-                2
+                1,
+                new ForHumans(),
             );
         }
 
@@ -63,7 +65,8 @@ class PyraminxScramble extends Scramble
                 $turn,
                 Move::from($move),
                 SimpleTurnType::getByTurnByModifier($matches['turnType'] ?? ''),
-                $move === strtolower($move) ? 2 : 1,
+                $move === strtoupper($move) ? 2 : 1,
+                new ForHumans(),
             );
         }
 

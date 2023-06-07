@@ -1,10 +1,10 @@
-Turn the right layer 90 degrees clockwise
-Turn the back layer 90 degrees counterclockwise
-Turn the right layer 90 degrees counterclockwise
-Turn the back layer 90 degrees counterclockwise
-Turn the right layer 90 degrees counterclockwise
-Turn the back layer 90 degrees counterclockwise
-Turn the top layer 90 degrees clockwise
-Turn the back layer 90 degrees counterclockwise
-Turn the 2 left layers 90 degrees counterclockwise
-Turn the 2 back layers 90 degrees counterclockwise
+Turn the right layer, including the tip, clockwise
+Turn the back layer, including the tip, counterclockwise
+Turn the right layer, including the tip, counterclockwise
+Turn the back layer, including the tip, counterclockwise
+Turn the right layer, including the tip, counterclockwise
+Turn the back layer, including the tip, counterclockwise
+Turn the top layer, including the tip, clockwise
+Turn the back layer, including the tip, counterclockwise
+Turn the left corner (tip) counterclockwise
+Turn the back corner (tip) counterclockwise

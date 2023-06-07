@@ -40,7 +40,8 @@ class CubeScramble extends Scramble
                 $depthLayer.$newMove->value.$sliceIndicator.$turnType->getModifier(),
                 $newMove,
                 $turnType,
-                $slices
+                $slices,
+                new ForHumans(),
             );
 
             $previousMove = $newMove;
@@ -83,6 +84,7 @@ class CubeScramble extends Scramble
                 Move::from($move),
                 TurnType::getByTurnByModifier($matches['turnType'] ?? ''),
                 $move === strtolower($move) ? 2 : (int) $slices,
+                new ForHumans(),
             );
         }
 
