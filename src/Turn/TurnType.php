@@ -6,9 +6,9 @@ interface TurnType
 {
     public function getOpposite(): self;
 
-    public function getDegrees(): int;
-
     public function getModifier(): string;
 
     public function forHumans(): ?string;
+
+    public static function getByTurnByModifier(string $modifier): self;
 }

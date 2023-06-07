@@ -1,42 +1,42 @@
 <?php
 
-namespace RobinIngelbrecht\TwistyPuzzleScrambler\Turn;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\TurnType as TurnTypeBase;
 
-enum SimpleTurnType: string implements TurnTypeBase
+enum TurnType: string implements TurnTypeBase
 {
-    case CLOCKWISE = 'clockwise';
-    case COUNTER_CLOCKWISE = 'counterClockwise';
+    case MINUS_MINUS = '--';
+    case PLUS_PLUS = '++';
 
     public function getOpposite(): self
     {
         return match ($this) {
-            self::CLOCKWISE => self::COUNTER_CLOCKWISE,
-            self::COUNTER_CLOCKWISE => self::CLOCKWISE,
+            self::MINUS_MINUS => self::PLUS_PLUS,
+            self::PLUS_PLUS => self::MINUS_MINUS,
         };
     }
 
     public function getModifier(): string
     {
         return match ($this) {
-            self::CLOCKWISE => '',
-            self::COUNTER_CLOCKWISE => "'",
+            self::MINUS_MINUS => '--',
+            self::PLUS_PLUS => '++',
         };
     }
 
     public function forHumans(): ?string
     {
         return match ($this) {
-            self::CLOCKWISE => 'clockwise',
-            self::COUNTER_CLOCKWISE => 'counterclockwise',
+            self::MINUS_MINUS => 'counterclockwise',
+            self::PLUS_PLUS => 'clockwise',
         };
     }
 
     public static function random(): self
     {
-        $turnTypes = self::cases();
+        $turnTypes = TurnType::cases();
 
         return $turnTypes[array_rand($turnTypes)];
     }
@@ -44,8 +44,8 @@ enum SimpleTurnType: string implements TurnTypeBase
     public static function getByTurnByModifier(string $modifier): self
     {
         return match ($modifier) {
-            '' => self::CLOCKWISE,
-            "'" => self::COUNTER_CLOCKWISE,
+            '--' => self::MINUS_MINUS,
+            '++' => self::PLUS_PLUS,
             default => throw new InvalidScramble(sprintf('Invalid turnAbbreviation "%s"', $modifier)),
         };
     }

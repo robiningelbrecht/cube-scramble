@@ -4,6 +4,7 @@ namespace RobinIngelbrecht\TwistyPuzzleScrambler;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\CubeScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx\MegaminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx\PyraminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Skewb\SkewbScramble;
 
@@ -47,5 +48,10 @@ class RandomScramble
     public static function skewb(): Scramble
     {
         return SkewbScramble::random(9);
+    }
+
+    public static function megaminx(): Scramble
+    {
+        return MegaminxScramble::random(10);
     }
 }

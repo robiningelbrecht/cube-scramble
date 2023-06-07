@@ -25,8 +25,7 @@ enum Move: string implements MoveBase
     {
         return match ($this) {
             self::R => 'left',
-            self::D => 'right',
-            self::U => 'top',
+            self::D, self::U => 'top',
         };
     }
 }

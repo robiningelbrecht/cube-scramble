@@ -5,6 +5,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\CubeScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx\MegaminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx\PyraminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\RandomScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Skewb\SkewbScramble;
@@ -72,5 +73,12 @@ class RandomScrambleTest extends TestCase
             SkewbScramble::fromNotation($scramble),
         );
         $this->assertCount(9, explode(' ', (string) $scramble));
+
+        $scramble = RandomScramble::megaminx();
+        $this->assertEquals(
+            $scramble,
+            MegaminxScramble::fromNotation($scramble),
+        );
+        $this->assertCount(77, explode(' ', (string) $scramble));
     }
 }
