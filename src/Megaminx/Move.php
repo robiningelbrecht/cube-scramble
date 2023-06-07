@@ -11,14 +11,13 @@ enum Move: string implements MoveBase
 
     case U = 'U';
 
+    /**
+     * @codeCoverageIgnore
+     */
     public static function random(): self
     {
-        $moves = [
-            self::R,
-            self::D,
-        ];
-
-        return $moves[array_rand($moves)];
+        // This method is never used, but the interface requires it.
+        return Move::D;
     }
 
     public function forHumans(): string
