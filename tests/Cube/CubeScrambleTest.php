@@ -47,7 +47,7 @@ class CubeScrambleTest extends TestCase
         $this->assertCount(21, explode(' ', (string) $scramble));
     }
 
-    public function testItShouldThrowWhenEmptySizeOne(): void
+    public function testItShouldThrowWhenEmptySizeForNotation(): void
     {
         $this->expectException(InvalidScramble::class);
         $this->expectExceptionMessage('Size is required');
@@ -55,12 +55,36 @@ class CubeScrambleTest extends TestCase
         CubeScramble::fromNotation('L2');
     }
 
-    public function testItShouldThrowWhenEmptySizeTwo(): void
+    public function testItShouldThrowWhenEmptySizeForRandom(): void
     {
         $this->expectException(InvalidScramble::class);
         $this->expectExceptionMessage('Size is required');
 
         CubeScramble::random(10);
+    }
+
+    public function testItShouldThrowOnInvalidTurn(): void
+    {
+        $this->expectException(InvalidScramble::class);
+        $this->expectExceptionMessage('Invalid turn "V"');
+
+        CubeScramble::fromNotation('V', Size::fromInt(3));
+    }
+
+    public function testItShouldThrowOnWhenNoOuterIndicatorButSlices(): void
+    {
+        $this->expectException(InvalidScramble::class);
+        $this->expectExceptionMessage('Invalid turn "3L", cannot specify number of slices if outer block move indicator "w" is not present');
+
+        CubeScramble::fromNotation('3L', Size::fromInt(7));
+    }
+
+    public function testItShouldThrowOnWhenSlicesIsTooLarge(): void
+    {
+        $this->expectException(InvalidScramble::class);
+        $this->expectExceptionMessage('Invalid turn "3Lw", slice cannot be greater than 2');
+
+        CubeScramble::fromNotation('3Lw', Size::fromInt(4));
     }
 
     protected function getSnapshotId(): string
