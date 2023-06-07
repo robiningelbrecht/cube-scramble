@@ -5,154 +5,154 @@
             "move": "R",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees clockwise"
         },
         {
             "notation": "D++",
             "move": "D",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees clockwise"
         },
         {
             "notation": "R--",
             "move": "R",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees counterclockwise"
         },
         {
             "notation": "D++",
             "move": "D",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees clockwise"
         },
         {
             "notation": "R++",
             "move": "R",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees clockwise"
         },
         {
             "notation": "D--",
             "move": "D",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees counterclockwise"
         },
         {
             "notation": "R++",
             "move": "R",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees clockwise"
         },
         {
             "notation": "D--",
             "move": "D",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees counterclockwise"
         },
         {
             "notation": "R--",
             "move": "R",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees counterclockwise"
         },
         {
             "notation": "D--",
             "move": "D",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees counterclockwise"
         },
         {
             "notation": "U'",
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 1,
-            "forHumans": "Turn the top layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the top face 144 degrees counterclockwise"
         },
         {
             "notation": "R++",
             "move": "R",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees clockwise"
         },
         {
             "notation": "D--",
             "move": "D",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees counterclockwise"
         },
         {
             "notation": "R++",
             "move": "R",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees clockwise"
         },
         {
             "notation": "D++",
             "move": "D",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees clockwise"
         },
         {
             "notation": "R++",
             "move": "R",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees clockwise"
         },
         {
             "notation": "D++",
             "move": "D",
             "turnType": "++",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees clockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees clockwise"
         },
         {
             "notation": "R--",
             "move": "R",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees counterclockwise"
         },
         {
             "notation": "D--",
             "move": "D",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees counterclockwise"
         },
         {
             "notation": "R--",
             "move": "R",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the left layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the left face, 144 degrees counterclockwise"
         },
         {
             "notation": "D--",
             "move": "D",
             "turnType": "--",
             "slices": 1,
-            "forHumans": "Turn the right layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the whole puzzle except the top face, 144 degrees counterclockwise"
         },
         {
             "notation": "U'",
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 1,
-            "forHumans": "Turn the top layer 144 degrees counterclockwise"
+            "forHumans": "Rotate the top face 144 degrees counterclockwise"
         }
     ]
 }

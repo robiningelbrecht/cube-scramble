@@ -16,11 +16,6 @@ class ForHumans implements ForHumansBase
             );
         }
 
-        /*
-         * R++ and R-- for rotating the whole puzzle except the left face, 144° clockwise or counterclockwise respectively
-         * D++ and D-- for rotating the whole puzzle except the top face, 144° clockwise or counterclockwise respectively
-         */
-
         return trim(sprintf(
             'Rotate the whole puzzle except the %s face, 144 degrees %s',
             $turn->getMove()->forHumans(),
