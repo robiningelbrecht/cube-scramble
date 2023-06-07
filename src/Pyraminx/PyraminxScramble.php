@@ -2,8 +2,6 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx;
 
-use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
-use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\TurnType;
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
@@ -21,7 +19,7 @@ class PyraminxScramble implements Scramble
         $this->turns = $turns;
     }
 
-    public static function random(int $scrambleSize, Size $size = null): Scramble
+    public static function random(int $scrambleSize): Scramble
     {
         $turns = [];
         $previousMove = null;
@@ -59,7 +57,7 @@ class PyraminxScramble implements Scramble
         return new self(...$turns);
     }
 
-    public static function fromNotation(string $notation, Size $size = null): Scramble
+    public static function fromNotation(string $notation): Scramble
     {
         $turns = [];
         foreach (explode(' ', $notation) as $turn) {

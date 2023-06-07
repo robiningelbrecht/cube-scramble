@@ -5,6 +5,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\CubeScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx\PyraminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\RandomScramble;
 use Spatie\Snapshots\MatchesSnapshots;
 
@@ -55,5 +56,13 @@ class RandomScrambleTest extends TestCase
             CubeScramble::fromNotation($scramble, Size::fromInt(7)),
         );
         $this->assertCount(100, explode(' ', (string) $scramble));
+
+        $scramble = RandomScramble::pyraminx();
+        $this->assertEquals(
+            $scramble,
+            PyraminxScramble::fromNotation($scramble),
+        );
+        $scrambleSize = count(explode(' ', (string) $scramble));
+        $this->assertTrue($scrambleSize > 8 && $scrambleSize < 13);
     }
 }
