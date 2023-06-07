@@ -1,11 +1,11 @@
 <?php
 
-namespace RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Turn;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\TurnType as TurnTypeBase;
 
-enum TurnType: string implements TurnTypeBase
+enum SimpleTurnType: string implements TurnTypeBase
 {
     case CLOCKWISE = 'clockwise';
     case COUNTER_CLOCKWISE = 'counterClockwise';

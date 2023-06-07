@@ -1,15 +1,15 @@
 <?php
 
-namespace RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx;
+namespace RobinIngelbrecht\TwistyPuzzleScrambler\Skewb;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\SimpleTurnType;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class PyraminxScramble extends Scramble
+class SkewbScramble extends Scramble
 {
-    private const REGEX = "/^(?<move>[UuRrLlBb])?(?<turnType>\\')?$/";
+    private const REGEX = "/^(?<move>[URLB])?(?<turnType>\\')?$/";
 
     public static function random(int $scrambleSize): Scramble
     {
@@ -33,19 +33,6 @@ class PyraminxScramble extends Scramble
             $previousMove = $newMove;
         }
 
-        $wideMoves = Move::wideMoves();
-        shuffle($wideMoves);
-        for ($i = 0; $i < rand(1, 4); ++$i) {
-            $move = $wideMoves[$i];
-            $turnType = SimpleTurnType::random();
-            $turns[] = Turn::fromMoveAndTurnTypeAndSlices(
-                $move->value.$turnType->getModifier(),
-                $move,
-                $turnType,
-                2
-            );
-        }
-
         return new self(...$turns);
     }
 
@@ -63,7 +50,7 @@ class PyraminxScramble extends Scramble
                 $turn,
                 Move::from($move),
                 SimpleTurnType::getByTurnByModifier($matches['turnType'] ?? ''),
-                $move === strtolower($move) ? 2 : 1,
+                1,
             );
         }
 

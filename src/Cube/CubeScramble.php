@@ -6,18 +6,15 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class CubeScramble implements Scramble
+class CubeScramble extends Scramble
 {
     private const REGEX = "/^(?<slices>[2-9]+)?(?<move>[UFRDLB])(?<outerBlockIndicator>w)?(?<turnType>\d+\\'|\\'\d+|\d+|\\')?$/";
-
-    /** @var \RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn[] */
-    private array $turns;
 
     private function __construct(
         private readonly Size $size,
         Turn ...$turns,
     ) {
-        $this->turns = $turns;
+        parent::__construct(...$turns);
     }
 
     public static function random(int $scrambleSize, Size $size = null): Scramble
@@ -95,31 +92,6 @@ class CubeScramble implements Scramble
     public function getSize(): Size
     {
         return $this->size;
-    }
-
-    public function getTurns(): array
-    {
-        return $this->turns;
-    }
-
-    public function reverse(): Scramble
-    {
-        $this->turns = array_map(
-            fn (Turn $turn) => $turn->getOpposite(),
-            array_reverse($this->getTurns())
-        );
-
-        return $this;
-    }
-
-    public function forHumans(): string
-    {
-        return implode(PHP_EOL, array_map(fn (Turn $turn) => $turn->forHumans(), $this->getTurns()));
-    }
-
-    public function __toString(): string
-    {
-        return implode(' ', array_map(fn (Turn $turn) => $turn->getNotation(), $this->getTurns()));
     }
 
     /**

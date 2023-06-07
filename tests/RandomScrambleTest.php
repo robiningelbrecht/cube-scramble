@@ -7,6 +7,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\CubeScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx\PyraminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\RandomScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Skewb\SkewbScramble;
 use Spatie\Snapshots\MatchesSnapshots;
 
 class RandomScrambleTest extends TestCase
@@ -64,5 +65,12 @@ class RandomScrambleTest extends TestCase
         );
         $scrambleSize = count(explode(' ', (string) $scramble));
         $this->assertTrue($scrambleSize > 8 && $scrambleSize < 13);
+
+        $scramble = RandomScramble::skewb();
+        $this->assertEquals(
+            $scramble,
+            SkewbScramble::fromNotation($scramble),
+        );
+        $this->assertCount(9, explode(' ', (string) $scramble));
     }
 }
