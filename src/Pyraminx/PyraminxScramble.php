@@ -9,7 +9,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
 class PyraminxScramble extends Scramble
 {
-    private const REGEX = "/^(?<move>[UuRrLlBb])?(?<turnType>\\')?$/";
+    private const REGEX = "/^(?<move>[UuRrLlBb])(?<turnType>\\')?$/";
 
     public static function random(int $scrambleSize): Scramble
     {

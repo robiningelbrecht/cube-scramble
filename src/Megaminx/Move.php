@@ -11,13 +11,10 @@ enum Move: string implements MoveBase
 
     case U = 'U';
 
-    /**
-     * @codeCoverageIgnore
-     */
     public static function random(): self
     {
         // This method is never used, but the interface requires it.
-        return Move::D;
+        throw new \RuntimeException('Not supported');
     }
 
     public function forHumans(): string

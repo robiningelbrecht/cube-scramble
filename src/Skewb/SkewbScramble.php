@@ -9,7 +9,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
 class SkewbScramble extends Scramble
 {
-    private const REGEX = "/^(?<move>[URLB])?(?<turnType>\\')?$/";
+    private const REGEX = "/^(?<move>[URLB])(?<turnType>\\')?$/";
 
     public static function random(int $scrambleSize): Scramble
     {

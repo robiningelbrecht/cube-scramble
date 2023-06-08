@@ -20,10 +20,7 @@ enum TurnType: string implements TurnTypeBase
 
     public function getModifier(): string
     {
-        return match ($this) {
-            self::MINUS_MINUS => '--',
-            self::PLUS_PLUS => '++',
-        };
+        return $this->value;
     }
 
     public function forHumans(): ?string
