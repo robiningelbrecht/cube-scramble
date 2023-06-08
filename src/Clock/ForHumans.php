@@ -9,10 +9,6 @@ class ForHumans implements ForHumansBase
 {
     public function turn(Turn $turn): string
     {
-        // For example, DR3- implies that only the “Down-Right” pin should be raised
-        // and the corresponding dial is to be moved counterclockwise by 3 notches.
-        // U6+ implies that both upper pins are to be raised and any corresponding dial
-        // is to be moved clockwise by 6 notches.
         if (Move::y === $turn->getMove()) {
             return 'Flip the clock over its side';
         }
