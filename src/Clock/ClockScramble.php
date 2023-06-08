@@ -61,9 +61,7 @@ class ClockScramble implements Scramble
         }
 
         foreach (explode(' ', $notation) as $turn) {
-            if (!preg_match(self::REGEX_TURN, $turn, $matches)) {
-                throw new InvalidScramble(sprintf('Invalid turn "%s"', $turn));
-            }
+            preg_match(self::REGEX_TURN, $turn, $matches);
 
             $move = $matches['move'];
 
