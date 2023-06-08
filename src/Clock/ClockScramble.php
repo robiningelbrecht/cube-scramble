@@ -4,14 +4,20 @@ namespace RobinIngelbrecht\TwistyPuzzleScrambler\Clock;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class ClockScramble extends Scramble
+class ClockScramble implements Scramble
 {
     private const REGEX_FULL_NOTATION = "/^UR\d[+-] DR\d[+-] DL\d[+-] UL\d[+-] U\d[+-] R\d[+-] D\d[+-] L\d[+-] ALL\d[+-] y2 U\d[+-] R\d[+-] D\d[+-] L\d[+-] ALL\d[+-]( UR| DR| DL| UL){1,4}$/";
     private const REGEX_TURN = "/^(?<move>[a-zA-Z]{1,3})(?<turnType>[\d][+-]|[\d])?$/";
 
-    public static function random(int $scrambleSize): Scramble
+    private function __construct(
+        private readonly Scramble $scramble,
+    ) {
+    }
+
+    public static function random(): Scramble
     {
         $moves = [
             Move::UR, Move::DR, Move::DL, Move::UL, Move::U, Move::R, Move::D,
@@ -44,7 +50,7 @@ class ClockScramble extends Scramble
             );
         }
 
-        return new self(...$turns);
+        return new self(new SimpleScramble(...$turns));
     }
 
     public static function fromNotation(string $notation): Scramble
@@ -70,6 +76,34 @@ class ClockScramble extends Scramble
             );
         }
 
-        return new self(...$turns);
+        return new self(new SimpleScramble(...$turns));
+    }
+
+    public function getTurns(): array
+    {
+        return $this->scramble->getTurns();
+    }
+
+    public function reverse(): Scramble
+    {
+        return new self($this->scramble->reverse());
+    }
+
+    public function forHumans(): string
+    {
+        return $this->scramble->forHumans();
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->scramble;
+    }
+
+    /**
+     * @return array<mixed>
+     */
+    public function jsonSerialize(): array
+    {
+        return $this->scramble->jsonSerialize();
     }
 }

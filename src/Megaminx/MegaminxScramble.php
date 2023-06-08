@@ -4,13 +4,19 @@ namespace RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\SimpleTurnType;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class MegaminxScramble extends Scramble
+class MegaminxScramble implements Scramble
 {
     private const REGEX_D_R = "/^(?<move>[RD])(?<turnType>--|\+\+)$/";
     private const REGEX_U = "/^(?<move>[U])(?<turnType>\\')?$/";
+
+    private function __construct(
+        private readonly Scramble $scramble,
+    ) {
+    }
 
     public static function random(int $scrambleSize, int $numberOfSequences = 7): Scramble
     {
@@ -40,7 +46,7 @@ class MegaminxScramble extends Scramble
             );
         }
 
-        return new self(...$turns);
+        return new self(new SimpleScramble(...$turns));
     }
 
     public static function fromNotation(string $notation): Scramble
@@ -75,6 +81,34 @@ class MegaminxScramble extends Scramble
             throw new InvalidScramble(sprintf('Invalid turn "%s"', $turn));
         }
 
-        return new self(...$turns);
+        return new self(new SimpleScramble(...$turns));
+    }
+
+    public function getTurns(): array
+    {
+        return $this->scramble->getTurns();
+    }
+
+    public function reverse(): Scramble
+    {
+        return new self($this->scramble->reverse());
+    }
+
+    public function forHumans(): string
+    {
+        return $this->scramble->forHumans();
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->scramble;
+    }
+
+    /**
+     * @return array<mixed>
+     */
+    public function jsonSerialize(): array
+    {
+        return $this->scramble->jsonSerialize();
     }
 }

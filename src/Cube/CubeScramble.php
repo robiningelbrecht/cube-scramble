@@ -4,17 +4,17 @@ namespace RobinIngelbrecht\TwistyPuzzleScrambler\Cube;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class CubeScramble extends Scramble
+class CubeScramble implements Scramble
 {
     private const REGEX = "/^(?<slices>[2-9]+)?(?<move>[UFRDLB])(?<outerBlockIndicator>w)?(?<turnType>\d+\\'|\\'\d+|\d+|\\')?$/";
 
     private function __construct(
         private readonly Size $size,
-        Turn ...$turns,
+        private readonly Scramble $scramble,
     ) {
-        parent::__construct(...$turns);
     }
 
     public static function random(int $scrambleSize, Size $size = null): Scramble
@@ -47,7 +47,7 @@ class CubeScramble extends Scramble
             $previousMove = $newMove;
         }
 
-        return new self($size, ...$turns);
+        return new self($size, new SimpleScramble(...$turns));
     }
 
     public static function fromNotation(string $notation, Size $size = null): Scramble
@@ -88,12 +88,32 @@ class CubeScramble extends Scramble
             );
         }
 
-        return new self($size, ...$turns);
+        return new self($size, new SimpleScramble(...$turns));
     }
 
     public function getSize(): Size
     {
         return $this->size;
+    }
+
+    public function getTurns(): array
+    {
+        return $this->scramble->getTurns();
+    }
+
+    public function reverse(): Scramble
+    {
+        return new self($this->getSize(), $this->scramble->reverse());
+    }
+
+    public function forHumans(): string
+    {
+        return $this->scramble->forHumans();
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->scramble;
     }
 
     /**
@@ -103,7 +123,7 @@ class CubeScramble extends Scramble
     {
         return [
             'size' => $this->getSize(),
-            'turns' => $this->getTurns(),
+            ...$this->scramble->jsonSerialize(),
         ];
     }
 }

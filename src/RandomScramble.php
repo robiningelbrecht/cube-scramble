@@ -2,6 +2,7 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler;
 
+use RobinIngelbrecht\TwistyPuzzleScrambler\Clock\ClockScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\CubeScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx\MegaminxScramble;
@@ -53,5 +54,10 @@ class RandomScramble
     public static function megaminx(): Scramble
     {
         return MegaminxScramble::random(10);
+    }
+
+    public static function clock(): Scramble
+    {
+        return ClockScramble::random();
     }
 }

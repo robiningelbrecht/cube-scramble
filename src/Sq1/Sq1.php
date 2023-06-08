@@ -2,8 +2,6 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Sq1;
 
-use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
-
 /*class Sq1 extends Scramble
 {
     public static function random(int $scrambleSize): Scramble
