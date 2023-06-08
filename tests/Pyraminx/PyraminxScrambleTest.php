@@ -21,6 +21,7 @@ class PyraminxScrambleTest extends TestCase
             $scramble
         ));
         $this->assertMatchesTextSnapshot($scramble->forHumans());
+        $this->assertCount(count(explode(' ', (string) $scramble)), $scramble->getTurns());
     }
 
     /**

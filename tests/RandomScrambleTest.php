@@ -3,6 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Clock\ClockScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\CubeScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx\MegaminxScramble;
@@ -15,7 +16,7 @@ class RandomScrambleTest extends TestCase
 {
     use MatchesSnapshots;
 
-    public function testFactoryMethods(): void
+    public function testCubeFactory(): void
     {
         $scramble = RandomScramble::twoByTwo();
         $this->assertEquals(
@@ -58,7 +59,10 @@ class RandomScrambleTest extends TestCase
             CubeScramble::fromNotation($scramble, Size::fromInt(7)),
         );
         $this->assertCount(100, explode(' ', (string) $scramble));
+    }
 
+    public function testPyraminxFactory(): void
+    {
         $scramble = RandomScramble::pyraminx();
         $this->assertEquals(
             $scramble,
@@ -66,19 +70,36 @@ class RandomScrambleTest extends TestCase
         );
         $scrambleSize = count(explode(' ', (string) $scramble));
         $this->assertTrue($scrambleSize > 8 && $scrambleSize < 13);
+    }
 
+    public function testSkewbFactory(): void
+    {
         $scramble = RandomScramble::skewb();
         $this->assertEquals(
             $scramble,
             SkewbScramble::fromNotation($scramble),
         );
         $this->assertCount(9, explode(' ', (string) $scramble));
+    }
 
+    public function testMegaminxFactory(): void
+    {
         $scramble = RandomScramble::megaminx();
         $this->assertEquals(
             $scramble,
             MegaminxScramble::fromNotation($scramble),
         );
         $this->assertCount(77, explode(' ', (string) $scramble));
+    }
+
+    public function testClockFactory(): void
+    {
+        $scramble = RandomScramble::clock();
+        $this->assertEquals(
+            $scramble,
+            ClockScramble::fromNotation($scramble),
+        );
+        $scrambleSize = count(explode(' ', (string) $scramble));
+        $this->assertTrue($scrambleSize > 15 && $scrambleSize < 20);
     }
 }
