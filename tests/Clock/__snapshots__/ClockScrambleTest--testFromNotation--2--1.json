@@ -1,0 +1,116 @@
+{
+    "turns": [
+        {
+            "notation": "UR6+",
+            "move": "UR",
+            "turnType": "6+",
+            "slices": 1,
+            "forHumans": "Raise the up-right pin and move the corresponding dial(s) clockwise by 6 notches"
+        },
+        {
+            "notation": "DR3-",
+            "move": "DR",
+            "turnType": "3-",
+            "slices": 1,
+            "forHumans": "Raise the down-right pin and move the corresponding dial(s) counterclockwise by 3 notches"
+        },
+        {
+            "notation": "DL6+",
+            "move": "DL",
+            "turnType": "6+",
+            "slices": 1,
+            "forHumans": "Raise the down-left pin and move the corresponding dial(s) clockwise by 6 notches"
+        },
+        {
+            "notation": "UL5+",
+            "move": "UL",
+            "turnType": "5+",
+            "slices": 1,
+            "forHumans": "Raise the up-left pin and move the corresponding dial(s) clockwise by 5 notches"
+        },
+        {
+            "notation": "U3-",
+            "move": "U",
+            "turnType": "3-",
+            "slices": 1,
+            "forHumans": "Raise both upper pins and move the corresponding dial(s) counterclockwise by 3 notches"
+        },
+        {
+            "notation": "R1-",
+            "move": "R",
+            "turnType": "1-",
+            "slices": 1,
+            "forHumans": "Raise both right pins and move the corresponding dial(s) counterclockwise by 1 notch"
+        },
+        {
+            "notation": "D5-",
+            "move": "D",
+            "turnType": "5-",
+            "slices": 1,
+            "forHumans": "Raise both down pins and move the corresponding dial(s) counterclockwise by 5 notches"
+        },
+        {
+            "notation": "L4+",
+            "move": "L",
+            "turnType": "4+",
+            "slices": 1,
+            "forHumans": "Raise both left pins and move the corresponding dial(s) clockwise by 4 notches"
+        },
+        {
+            "notation": "ALL0+",
+            "move": "ALL",
+            "turnType": "0+",
+            "slices": 1,
+            "forHumans": "Raise all pins"
+        },
+        {
+            "notation": "y2",
+            "move": "y",
+            "turnType": "2",
+            "slices": 1,
+            "forHumans": "Flip the clock over its side"
+        },
+        {
+            "notation": "U5+",
+            "move": "U",
+            "turnType": "5+",
+            "slices": 1,
+            "forHumans": "Raise both upper pins and move the corresponding dial(s) clockwise by 5 notches"
+        },
+        {
+            "notation": "R4-",
+            "move": "R",
+            "turnType": "4-",
+            "slices": 1,
+            "forHumans": "Raise both right pins and move the corresponding dial(s) counterclockwise by 4 notches"
+        },
+        {
+            "notation": "D4-",
+            "move": "D",
+            "turnType": "4-",
+            "slices": 1,
+            "forHumans": "Raise both down pins and move the corresponding dial(s) counterclockwise by 4 notches"
+        },
+        {
+            "notation": "L3-",
+            "move": "L",
+            "turnType": "3-",
+            "slices": 1,
+            "forHumans": "Raise both left pins and move the corresponding dial(s) counterclockwise by 3 notches"
+        },
+        {
+            "notation": "ALL6+",
+            "move": "ALL",
+            "turnType": "6+",
+            "slices": 1,
+            "forHumans": "Raise all pins and move the corresponding dial(s) clockwise by 6 notches"
+        },
+        {
+            "notation": "UL",
+            "move": "UL",
+            "turnType": "",
+            "slices": 1,
+            "forHumans": "Raise the up-left pin"
+        }
+    ]
+}

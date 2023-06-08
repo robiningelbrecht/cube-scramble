@@ -34,7 +34,21 @@ enum TurnType: string implements TurnTypeBase
 
     public function forHumans(): ?string
     {
-        return 'todo';
+        return match ($this) {
+            self::ZERO_PLUS, self::NONE => '',
+            self::ONE_PLUS => 'clockwise by 1 notch',
+            self::TWO_PLUS => 'clockwise by 2 notches',
+            self::THREE_PLUS => 'clockwise by 3 notches',
+            self::FOUR_PLUS => 'clockwise by 4 notches',
+            self::FIVE_PLUS => 'clockwise by 5 notches',
+            self::SIX_PLUS => 'clockwise by 6 notches',
+            self::ONE_MINUS => 'counterclockwise by 1 notch',
+            self::TWO_MINUS => 'counterclockwise by 2 notches',
+            self::THREE_MINUS => 'counterclockwise by 3 notches',
+            self::FOUR_MINUS => 'counterclockwise by 4 notches',
+            self::FIVE_MINUS => 'counterclockwise by 5 notches',
+            default => throw new InvalidScramble(sprintf('Invalid turn type %s', $this->value))
+        };
     }
 
     public static function random(): self

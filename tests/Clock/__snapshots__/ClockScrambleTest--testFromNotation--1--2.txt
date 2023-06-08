@@ -1,0 +1,17 @@
+Raise the up-right pin
+Raise the down-right pin and move the corresponding dial(s) clockwise by 1 notch
+Raise the down-left pin and move the corresponding dial(s) clockwise by 6 notches
+Raise the up-left pin
+Raise both upper pins and move the corresponding dial(s) clockwise by 2 notches
+Raise both right pins and move the corresponding dial(s) counterclockwise by 1 notch
+Raise both down pins and move the corresponding dial(s) clockwise by 5 notches
+Raise both left pins and move the corresponding dial(s) counterclockwise by 3 notches
+Raise all pins
+Flip the clock over its side
+Raise both upper pins and move the corresponding dial(s) clockwise by 1 notch
+Raise both right pins
+Raise both down pins and move the corresponding dial(s) counterclockwise by 5 notches
+Raise both left pins and move the corresponding dial(s) counterclockwise by 2 notches
+Raise all pins and move the corresponding dial(s) clockwise by 5 notches
+Raise the up-right pin
+Raise the down-right pin

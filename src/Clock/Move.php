@@ -2,6 +2,7 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Clock;
 
+use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Move as MoveBase;
 
 enum Move: string implements MoveBase
@@ -36,8 +37,32 @@ enum Move: string implements MoveBase
         ];
     }
 
+    /**
+     * @return \RobinIngelbrecht\TwistyPuzzleScrambler\Clock\Move[]
+     */
+    public static function bothMoves(): array
+    {
+        return [
+            self::U,
+            self::R,
+            self::D,
+            self::L,
+        ];
+    }
+
     public function forHumans(): string
     {
-        return 'todo';
+        return match ($this) {
+            self::UR => 'up-right',
+            self::DR => 'down-right',
+            self::DL => 'down-left',
+            self::UL => 'up-left',
+            self::U => 'upper',
+            self::R => 'right',
+            self::D => 'down',
+            self::L => 'left',
+            self::ALL => 'all',
+            default => throw new InvalidScramble(sprintf('Invalid move %s', $this->value))
+        };
     }
 }
