@@ -16,6 +16,13 @@ class MoveTest extends TestCase
         Move::random();
     }
 
+    public function testForHumans(): void
+    {
+        $this->expectException(NotImplemented::class);
+
+        Move::fromTopAndBottomMoves(1, 2)->forHumans();
+    }
+
     public function testItShouldThrowWhenTopMoveIsTooHigh(): void
     {
         $this->expectException(InvalidScramble::class);
