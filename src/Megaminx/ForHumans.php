@@ -11,13 +11,13 @@ class ForHumans implements ForHumansBase
     {
         if (Move::U === $turn->getMove()) {
             return sprintf(
-                'Rotate the top face 144 degrees %s',
+                'Rotate the top face 144° %s',
                 $turn->getTurnType()->forHumans()
             );
         }
 
         return trim(sprintf(
-            'Rotate the whole puzzle except the %s face, 144 degrees %s',
+            'Rotate the whole puzzle except the %s face, 144° %s',
             $turn->getMove()->forHumans(),
             $turn->getTurnType()->forHumans()
         ));

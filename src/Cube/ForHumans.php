@@ -13,7 +13,7 @@ class ForHumans implements ForHumansBase
         $turnType = $turn->getTurnType();
 
         return trim(sprintf(
-            'Turn the %s%s layer%s %s degrees %s',
+            'Turn the %s%s layer%s %s° %s',
             $turn->getMove()->forHumans(),
             $turn->getSlices() > 1 ? ' '.$turn->getSlices() : '',
             $turn->getSlices() > 1 ? 's' : '',

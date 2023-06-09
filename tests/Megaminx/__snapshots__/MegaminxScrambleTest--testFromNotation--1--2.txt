@@ -1,33 +1,33 @@
-Rotate the whole puzzle except the left face, 144 degrees clockwise
-Rotate the whole puzzle except the top face, 144 degrees counterclockwise
-Rotate the whole puzzle except the left face, 144 degrees counterclockwise
-Rotate the whole puzzle except the top face, 144 degrees counterclockwise
-Rotate the whole puzzle except the left face, 144 degrees clockwise
-Rotate the whole puzzle except the top face, 144 degrees clockwise
-Rotate the whole puzzle except the left face, 144 degrees clockwise
-Rotate the whole puzzle except the top face, 144 degrees counterclockwise
-Rotate the whole puzzle except the left face, 144 degrees counterclockwise
-Rotate the whole puzzle except the top face, 144 degrees clockwise
-Rotate the top face 144 degrees clockwise
-Rotate the whole puzzle except the left face, 144 degrees counterclockwise
-Rotate the whole puzzle except the top face, 144 degrees counterclockwise
-Rotate the whole puzzle except the left face, 144 degrees clockwise
-Rotate the whole puzzle except the top face, 144 degrees clockwise
-Rotate the whole puzzle except the left face, 144 degrees counterclockwise
-Rotate the whole puzzle except the top face, 144 degrees clockwise
-Rotate the whole puzzle except the left face, 144 degrees clockwise
-Rotate the whole puzzle except the top face, 144 degrees counterclockwise
-Rotate the whole puzzle except the left face, 144 degrees counterclockwise
-Rotate the whole puzzle except the top face, 144 degrees clockwise
-Rotate the top face 144 degrees clockwise
-Rotate the whole puzzle except the left face, 144 degrees clockwise
-Rotate the whole puzzle except the top face, 144 degrees counterclockwise
-Rotate the whole puzzle except the left face, 144 degrees counterclockwise
-Rotate the whole puzzle except the top face, 144 degrees counterclockwise
-Rotate the whole puzzle except the left face, 144 degrees counterclockwise
-Rotate the whole puzzle except the top face, 144 degrees clockwise
-Rotate the whole puzzle except the left face, 144 degrees clockwise
-Rotate the whole puzzle except the top face, 144 degrees counterclockwise
-Rotate the whole puzzle except the left face, 144 degrees clockwise
-Rotate the whole puzzle except the top face, 144 degrees clockwise
-Rotate the top face 144 degrees clockwise
+Rotate the whole puzzle except the left face, 144° clockwise
+Rotate the whole puzzle except the top face, 144° counterclockwise
+Rotate the whole puzzle except the left face, 144° counterclockwise
+Rotate the whole puzzle except the top face, 144° counterclockwise
+Rotate the whole puzzle except the left face, 144° clockwise
+Rotate the whole puzzle except the top face, 144° clockwise
+Rotate the whole puzzle except the left face, 144° clockwise
+Rotate the whole puzzle except the top face, 144° counterclockwise
+Rotate the whole puzzle except the left face, 144° counterclockwise
+Rotate the whole puzzle except the top face, 144° clockwise
+Rotate the top face 144° clockwise
+Rotate the whole puzzle except the left face, 144° counterclockwise
+Rotate the whole puzzle except the top face, 144° counterclockwise
+Rotate the whole puzzle except the left face, 144° clockwise
+Rotate the whole puzzle except the top face, 144° clockwise
+Rotate the whole puzzle except the left face, 144° counterclockwise
+Rotate the whole puzzle except the top face, 144° clockwise
+Rotate the whole puzzle except the left face, 144° clockwise
+Rotate the whole puzzle except the top face, 144° counterclockwise
+Rotate the whole puzzle except the left face, 144° counterclockwise
+Rotate the whole puzzle except the top face, 144° clockwise
+Rotate the top face 144° clockwise
+Rotate the whole puzzle except the left face, 144° clockwise
+Rotate the whole puzzle except the top face, 144° counterclockwise
+Rotate the whole puzzle except the left face, 144° counterclockwise
+Rotate the whole puzzle except the top face, 144° counterclockwise
+Rotate the whole puzzle except the left face, 144° counterclockwise
+Rotate the whole puzzle except the top face, 144° clockwise
+Rotate the whole puzzle except the left face, 144° clockwise
+Rotate the whole puzzle except the top face, 144° counterclockwise
+Rotate the whole puzzle except the left face, 144° clockwise
+Rotate the whole puzzle except the top face, 144° clockwise
+Rotate the top face 144° clockwise

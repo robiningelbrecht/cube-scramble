@@ -6,63 +6,63 @@
             "move": "F",
             "turnType": "double",
             "slices": 1,
-            "forHumans": "Turn the front layer 180 degrees"
+            "forHumans": "Turn the front layer 180\u00b0"
         },
         {
             "notation": "U'",
             "move": "U",
             "turnType": "counterClockwise",
             "slices": 1,
-            "forHumans": "Turn the top layer 90 degrees counterclockwise"
+            "forHumans": "Turn the top layer 90\u00b0 counterclockwise"
         },
         {
             "notation": "R",
             "move": "R",
             "turnType": "clockwise",
             "slices": 1,
-            "forHumans": "Turn the right layer 90 degrees clockwise"
+            "forHumans": "Turn the right layer 90\u00b0 clockwise"
         },
         {
             "notation": "U2",
             "move": "U",
             "turnType": "double",
             "slices": 1,
-            "forHumans": "Turn the top layer 180 degrees"
+            "forHumans": "Turn the top layer 180\u00b0"
         },
         {
             "notation": "R",
             "move": "R",
             "turnType": "clockwise",
             "slices": 1,
-            "forHumans": "Turn the right layer 90 degrees clockwise"
+            "forHumans": "Turn the right layer 90\u00b0 clockwise"
         },
         {
             "notation": "U",
             "move": "U",
             "turnType": "clockwise",
             "slices": 1,
-            "forHumans": "Turn the top layer 90 degrees clockwise"
+            "forHumans": "Turn the top layer 90\u00b0 clockwise"
         },
         {
             "notation": "R'",
             "move": "R",
             "turnType": "counterClockwise",
             "slices": 1,
-            "forHumans": "Turn the right layer 90 degrees counterclockwise"
+            "forHumans": "Turn the right layer 90\u00b0 counterclockwise"
         },
         {
             "notation": "F'",
             "move": "F",
             "turnType": "counterClockwise",
             "slices": 1,
-            "forHumans": "Turn the front layer 90 degrees counterclockwise"
+            "forHumans": "Turn the front layer 90\u00b0 counterclockwise"
         },
         {
             "notation": "R",
             "move": "R",
             "turnType": "clockwise",
             "slices": 1,
-            "forHumans": "Turn the right layer 90 degrees clockwise"
+            "forHumans": "Turn the right layer 90\u00b0 clockwise"
         }
     ]
 }
