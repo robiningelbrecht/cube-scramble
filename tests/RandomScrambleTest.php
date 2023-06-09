@@ -10,6 +10,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx\MegaminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx\PyraminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\RandomScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Skewb\SkewbScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Sq1\Sq1Scramble;
 use Spatie\Snapshots\MatchesSnapshots;
 
 class RandomScrambleTest extends TestCase
@@ -101,5 +102,15 @@ class RandomScrambleTest extends TestCase
         );
         $scrambleSize = count(explode(' ', (string) $scramble));
         $this->assertTrue($scrambleSize > 15 && $scrambleSize < 20);
+    }
+
+    public function testSq1Factory(): void
+    {
+        $scramble = RandomScramble::sq1();
+        $this->assertEquals(
+            $scramble,
+            Sq1Scramble::fromNotation($scramble),
+        );
+        $this->assertCount(13, explode(' ', (string) $scramble));
     }
 }

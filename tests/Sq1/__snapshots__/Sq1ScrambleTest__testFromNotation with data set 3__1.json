@@ -1,0 +1,134 @@
+{
+    "turns": [
+        {
+            "notation": "(-3,-1)\/",
+            "move": {
+                "topMove": -3,
+                "bottomMove": -1
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(4,-5)\/",
+            "move": {
+                "topMove": 4,
+                "bottomMove": -5
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(3,0)\/",
+            "move": {
+                "topMove": 3,
+                "bottomMove": 0
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(5,-1)\/",
+            "move": {
+                "topMove": 5,
+                "bottomMove": -1
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(3,0)\/",
+            "move": {
+                "topMove": 3,
+                "bottomMove": 0
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(-3,0)\/",
+            "move": {
+                "topMove": -3,
+                "bottomMove": 0
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(0,-2)\/",
+            "move": {
+                "topMove": 0,
+                "bottomMove": -2
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(0,-3)\/",
+            "move": {
+                "topMove": 0,
+                "bottomMove": -3
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(-2,-3)\/",
+            "move": {
+                "topMove": -2,
+                "bottomMove": -3
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(0,-4)\/",
+            "move": {
+                "topMove": 0,
+                "bottomMove": -4
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(2,0)\/",
+            "move": {
+                "topMove": 2,
+                "bottomMove": 0
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(3,0)\/",
+            "move": {
+                "topMove": 3,
+                "bottomMove": 0
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        },
+        {
+            "notation": "(2,0)\/",
+            "move": {
+                "topMove": 2,
+                "bottomMove": 0
+            },
+            "turnType": null,
+            "slices": 1,
+            "forHumans": "todo"
+        }
+    ]
+}

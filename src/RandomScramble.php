@@ -8,6 +8,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\Cube\Size;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx\MegaminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Pyraminx\PyraminxScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Skewb\SkewbScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Sq1\Sq1Scramble;
 
 class RandomScramble
 {
@@ -59,5 +60,10 @@ class RandomScramble
     public static function clock(): Scramble
     {
         return ClockScramble::random();
+    }
+
+    public static function sq1(): Scramble
+    {
+        return Sq1Scramble::random(13);
     }
 }

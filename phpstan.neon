@@ -2,3 +2,5 @@ parameters:
 	level: 9
 	paths:
 		- src
+	ignoreErrors:
+		- '#Comparison operation ">" between int<1, max> and 0 is always true.#'

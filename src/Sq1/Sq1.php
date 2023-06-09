@@ -2,98 +2,120 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Sq1;
 
-/*class Sq1 extends Scramble
+class Sq1
 {
-    public static function random(int $scrambleSize): Scramble
+    /** @var int[] */
+    private array $tops;
+    /** @var int[] */
+    private array $bottom;
+
+    private function __construct()
     {
-        $turns = [];
-        for ($i = 0; $i < $numTurns; $i++) {
-            $moves = $this->possibleMoves();
-            $topMove = 0;
-            $bottomMove = 0;
+        $this->tops = [2, 1, 2, 1, 2, 1, 2, 1];
+        $this->bottom = [1, 2, 1, 2, 1, 2, 1, 2];
+    }
 
-            do {
-                $topMove = randomElement($moves['possibleTop']);
-                $bottomMove = randomElement($moves['possibleBottom']);
-            } while ($topMove === 0 && $bottomMove === 0);
+    public static function create(): self
+    {
+        return new self();
+    }
 
-            $turns[] = [
-                'top' => $topMove,
-                'bottom' => $bottomMove
-            ];
+    /**
+     * @return array<int>
+     */
+    public function getPossibleTopMoves(): array
+    {
+        $possibleTopMoves = [];
 
-            $this->turnTop($topMove);
-            $this->turnBottom($bottomMove);
-            $this->slice();
+        for ($i = -5; $i <= 6; ++$i) {
+            if ($this->isMovePossible([...$this->tops], $i)) {
+                $possibleTopMoves[] = $i;
+            }
         }
+
+        return $possibleTopMoves;
     }
 
-    public static function fromNotation(string $notation): Scramble
+    /**
+     * @return array<int>
+     */
+    public function getPossibleBottomMoves(): array
     {
+        $possibleBottomMoves = [];
 
+        for ($i = -5; $i <= 5; ++$i) {
+            if ($this->isMovePossible([...$this->bottom], $i)) {
+                $possibleBottomMoves[] = $i;
+            }
+        }
+
+        return $possibleBottomMoves;
     }
 
-    private function turnTop($turns) {
-        global $tops; // Assuming $tops is an array defined outside the function
-
-        while ($turns != 0) {
+    public function turnTop(int $turns): void
+    {
+        while (0 != $turns) {
             if ($turns < 0) {
-                $piece = array_shift($tops);
+                /** @var int $piece */
+                $piece = array_shift($this->tops);
                 $turns += $piece;
-                array_push($tops, $piece);
-            } else if ($turns > 0) {
-                $piece = array_pop($tops);
+                $this->tops[] = $piece;
+            } elseif ($turns > 0) {
+                $piece = array_pop($this->tops);
                 $turns -= $piece;
-                array_unshift($tops, $piece);
+                array_unshift($this->tops, $piece);
             }
         }
     }
 
-    private function turnBottom($turns) {
-        global $bottom; // Assuming $bottom is an array defined outside the function
-
-        while ($turns != 0) {
+    public function turnBottom(int $turns): void
+    {
+        while (0 != $turns) {
             if ($turns < 0) {
-                $piece = array_shift($bottom);
+                /** @var int $piece */
+                $piece = array_shift($this->bottom);
                 $turns += $piece;
-                array_push($bottom, $piece);
-            } else if ($turns > 0) {
-                $piece = array_pop($bottom);
+                $this->bottom[] = $piece;
+            } elseif ($turns > 0) {
+                $piece = array_pop($this->bottom);
                 $turns -= $piece;
-                array_unshift($bottom, $piece);
+                array_unshift($this->bottom, $piece);
             }
         }
     }
 
-    private function slice() {
-        global $tops, $bottom; // Assuming $tops and $bottom are arrays defined outside the function
-
+    public function slice(): void
+    {
         $topNum = 0;
         $bottomNum = 0;
 
         $value = 0;
 
-        for ($i = count($tops); $i > 0 && $value < 6; $i--) {
-            $value += $tops[$i - 1];
-            $topNum++;
+        for ($i = count($this->tops); $i > 0 && $value < 6; --$i) {
+            $value += $this->tops[$i - 1];
+            ++$topNum;
         }
 
         $value = 0;
-        for ($i = 0; $i < count($bottom) && $value < 6; $i++) {
-            $value += $bottom[$i];
-            $bottomNum++;
+        for ($i = 0; $i < count($this->bottom) && $value < 6; ++$i) {
+            $value += $this->bottom[$i];
+            ++$bottomNum;
         }
 
-        $topSlice = array_splice($tops, count($tops) - $topNum);
-        $bottomSlice = array_splice($bottom, 0, $bottomNum);
+        $topSlice = array_splice($this->tops, count($this->tops) - $topNum);
+        $bottomSlice = array_splice($this->bottom, 0, $bottomNum);
 
-        $tops = array_merge($tops, $bottomSlice);
-        $bottom = array_merge($topSlice, $bottom);
+        $this->tops = array_merge($this->tops, $bottomSlice);
+        $this->bottom = array_merge($topSlice, $this->bottom);
     }
 
-    private function isLayerAligned($layer) {
+    /**
+     * @param array<int> $layer
+     */
+    private function isLayerAligned(array $layer): bool
+    {
         $value = 0;
-        for ($i = 0; $i < count($layer) && $value < 6; $i++) {
+        for ($i = 0; $i < count($layer) && $value < 6; ++$i) {
             $value += $layer[$i];
             if ($value > 6) {
                 return false;
@@ -103,21 +125,27 @@ namespace RobinIngelbrecht\TwistyPuzzleScrambler\Sq1;
         return true;
     }
 
-    private function isMovePossible($layer, $turns) {
+    /**
+     * @param array<int> $layer
+     */
+    private function isMovePossible(array $layer, int $turns): bool
+    {
         if ($turns < 0) {
-            // Take off front, put on end
             while ($turns < 0) {
+                /** @var int $piece */
                 $piece = array_shift($layer);
                 if ($piece > abs($turns)) {
                     return false;
                 }
                 $turns += $piece;
-                array_push($layer, $piece);
+                $layer[] = $piece;
             }
+
             return $this->isLayerAligned($layer);
-        } else if ($turns > 0) {
+        } elseif ($turns > 0) {
             // Take off end, put on front
             while ($turns > 0) {
+                /** @var int $piece */
                 $piece = array_pop($layer);
                 if ($turns < $piece) {
                     return false;
@@ -125,32 +153,10 @@ namespace RobinIngelbrecht\TwistyPuzzleScrambler\Sq1;
                 $turns -= $piece;
                 array_unshift($layer, $piece);
             }
+
             return $this->isLayerAligned($layer);
-        } else {
-            // Turns = 0, should be possible
-            return true;
-        }
-    }
-
-    private function possibleMoves() {
-        global $tops, $bottom; // Assuming $tops and $bottom are arrays defined outside the function
-
-        $possibleTop = [];
-        $possibleBottom = [];
-
-        for ($i = -6; $i <= 6; $i++) {
-            if ($this->isMovePossible([...$tops], $i)) {
-                $possibleTop[] = $i;
-            }
-            if ($this->isMovePossible([...$bottom], $i)) {
-                $possibleBottom[] = $i;
-            }
         }
 
-        return [
-            "possibleTop" => $possibleTop,
-            "possibleBottom" => $possibleBottom
-        ];
+        return true;
     }
-
-}*/
+}
