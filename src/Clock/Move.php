@@ -3,6 +3,7 @@
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Clock;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\NotImplemented;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Move as MoveBase;
 
 enum Move: string implements MoveBase
@@ -21,7 +22,7 @@ enum Move: string implements MoveBase
     public static function random(): self
     {
         // This method is never used, but the interface requires it.
-        throw new \RuntimeException('Not supported');
+        throw new NotImplemented();
     }
 
     /**

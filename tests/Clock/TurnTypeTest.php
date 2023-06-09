@@ -5,6 +5,7 @@ namespace Tests\Clock;
 use PHPUnit\Framework\TestCase;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Clock\TurnType;
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\NotImplemented;
 
 class TurnTypeTest extends TestCase
 {
@@ -26,8 +27,7 @@ class TurnTypeTest extends TestCase
 
     public function testGetOpposite(): void
     {
-        $this->expectException(\RuntimeException::class);
-        $this->expectExceptionMessage('Not supported');
+        $this->expectException(NotImplemented::class);
 
         TurnType::FIVE_MINUS->getOpposite();
     }

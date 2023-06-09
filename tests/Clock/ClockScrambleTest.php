@@ -5,6 +5,7 @@ namespace Tests\Clock;
 use PHPUnit\Framework\TestCase;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Clock\ClockScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\NotImplemented;
 use Spatie\Snapshots\MatchesSnapshots;
 
 class ClockScrambleTest extends TestCase
@@ -26,8 +27,7 @@ class ClockScrambleTest extends TestCase
 
     public function testReverse(): void
     {
-        $this->expectException(\RuntimeException::class);
-        $this->expectExceptionMessage('Not supported');
+        $this->expectException(NotImplemented::class);
 
         ClockScramble::fromNotation(
             'UR5- DR2+ DL4+ UL0+ U5- R4- D4- L2- ALL1- y2 U1+ R5- D2- L0+ ALL1+ DR DL UL'

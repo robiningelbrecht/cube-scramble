@@ -2,6 +2,7 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Sq1;
 
+use RobinIngelbrecht\TwistyPuzzleScrambler\NotImplemented;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\TurnType as TurnTypeBase;
 
 class NullTurnType implements TurnTypeBase, \JsonSerializable
@@ -17,22 +18,22 @@ class NullTurnType implements TurnTypeBase, \JsonSerializable
 
     public function getOpposite(): self
     {
-        throw new \RuntimeException('Not supported');
+        throw new NotImplemented();
     }
 
     public function getModifier(): string
     {
-        throw new \RuntimeException('Not supported');
+        throw new NotImplemented();
     }
 
     public function forHumans(): ?string
     {
-        throw new \RuntimeException('Not supported');
+        throw new NotImplemented();
     }
 
     public static function getByTurnByModifier(string $modifier): self
     {
-        throw new \RuntimeException('Not supported');
+        throw new NotImplemented();
     }
 
     public function jsonSerialize(): ?string

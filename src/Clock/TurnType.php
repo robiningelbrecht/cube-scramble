@@ -3,6 +3,7 @@
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Clock;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\NotImplemented;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\TurnType as TurnTypeBase;
 
 enum TurnType: string implements TurnTypeBase
@@ -24,7 +25,7 @@ enum TurnType: string implements TurnTypeBase
 
     public function getOpposite(): self
     {
-        throw new \RuntimeException('Not supported');
+        throw new NotImplemented();
     }
 
     public function getModifier(): string

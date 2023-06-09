@@ -3,6 +3,7 @@
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Sq1;
 
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\NotImplemented;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Move as MoveBase;
 
 class Move implements MoveBase, \JsonSerializable
@@ -12,10 +13,10 @@ class Move implements MoveBase, \JsonSerializable
         private readonly int $bottomMove,
     ) {
         if ($this->topMove < -5 || $this->topMove > 6) {
-            throw new InvalidScramble(sprintf('Invalid top move %s provided, valid range is -5 -> 6.', $this->topMove));
+            throw new InvalidScramble(sprintf('Invalid top move %s provided, valid range is -5 -> 6', $this->topMove));
         }
         if ($this->bottomMove < -5 || $this->bottomMove > 5) {
-            throw new InvalidScramble(sprintf('Invalid bottom move %s provided, valid range is -5 -> 5.', $this->bottomMove));
+            throw new InvalidScramble(sprintf('Invalid bottom move %s provided, valid range is -5 -> 5', $this->bottomMove));
         }
     }
 
@@ -29,7 +30,7 @@ class Move implements MoveBase, \JsonSerializable
 
     public static function random(): self
     {
-        throw new \RuntimeException('Not supported');
+        throw new NotImplemented();
     }
 
     public function getTopMove(): int
