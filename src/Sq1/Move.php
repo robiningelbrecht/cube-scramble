@@ -45,7 +45,7 @@ class Move implements MoveBase, \JsonSerializable
 
     public function forHumans(): string
     {
-        return 'todo';
+        throw new NotImplemented();
     }
 
     /**

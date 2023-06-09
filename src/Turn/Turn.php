@@ -56,7 +56,10 @@ class Turn implements \JsonSerializable
         return $this->slices;
     }
 
-    public function forHumans(): string
+    /**
+     * @return string|string[]
+     */
+    public function forHumans(): string|array
     {
         return $this->forHumans->turn($this);
     }

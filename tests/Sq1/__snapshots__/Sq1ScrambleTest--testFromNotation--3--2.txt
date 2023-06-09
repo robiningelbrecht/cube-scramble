@@ -1,13 +1,30 @@
-todo
-todo
-todo
-todo
-todo
-todo
-todo
-todo
-todo
-todo
-todo
-todo
-todo
+Turn the top layer 90° counterclockwise
+Turn the bottom layer 30° counterclockwise
+Turn the entire left half of the puzzle 180°
+Turn the top layer 120° clockwise
+Turn the bottom layer 150° counterclockwise
+Turn the entire left half of the puzzle 180°
+Turn the top layer 90° clockwise
+Turn the entire left half of the puzzle 180°
+Turn the top layer 150° clockwise
+Turn the bottom layer 30° counterclockwise
+Turn the entire left half of the puzzle 180°
+Turn the top layer 90° clockwise
+Turn the entire left half of the puzzle 180°
+Turn the top layer 90° counterclockwise
+Turn the entire left half of the puzzle 180°
+Turn the bottom layer 60° counterclockwise
+Turn the entire left half of the puzzle 180°
+Turn the bottom layer 90° counterclockwise
+Turn the entire left half of the puzzle 180°
+Turn the top layer 60° counterclockwise
+Turn the bottom layer 90° counterclockwise
+Turn the entire left half of the puzzle 180°
+Turn the bottom layer 120° counterclockwise
+Turn the entire left half of the puzzle 180°
+Turn the top layer 60° clockwise
+Turn the entire left half of the puzzle 180°
+Turn the top layer 90° clockwise
+Turn the entire left half of the puzzle 180°
+Turn the top layer 60° clockwise
+Turn the entire left half of the puzzle 180°

@@ -6,5 +6,8 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
 interface ForHumans
 {
-    public function turn(Turn $turn): string;
+    /**
+     * @return string|string[]
+     */
+    public function turn(Turn $turn): string|array;
 }

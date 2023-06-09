@@ -16,7 +16,7 @@ class ForHumans implements ForHumansBase
         if ($turnType = $turn->getTurnType()->forHumans()) {
             if (in_array($turn->getMove(), Move::bothMoves())) {
                 return sprintf(
-                    'Raise both %s pins and move the corresponding dial(s) %s',
+                    'Raise both %s pins and move the corresponding dials %s',
                     $turn->getMove()->forHumans(),
                     $turnType
                 );
@@ -24,13 +24,13 @@ class ForHumans implements ForHumansBase
 
             if (Move::ALL === $turn->getMove()) {
                 return sprintf(
-                    'Raise all pins and move the corresponding dial(s) %s',
+                    'Raise all pins and move the corresponding dials %s',
                     $turnType
                 );
             }
 
             return sprintf(
-                'Raise the %s pin and move the corresponding dial(s) %s',
+                'Raise the %s pin and move the corresponding dial %s',
                 $turn->getMove()->forHumans(),
                 $turnType
             );

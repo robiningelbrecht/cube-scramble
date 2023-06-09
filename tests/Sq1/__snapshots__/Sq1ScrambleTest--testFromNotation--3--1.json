@@ -8,7 +8,11 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 90\u00b0 counterclockwise",
+                "Turn the bottom layer 30\u00b0 counterclockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(4,-5)\/",
@@ -18,7 +22,11 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 120\u00b0 clockwise",
+                "Turn the bottom layer 150\u00b0 counterclockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(3,0)\/",
@@ -28,7 +36,10 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 90\u00b0 clockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(5,-1)\/",
@@ -38,7 +49,11 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 150\u00b0 clockwise",
+                "Turn the bottom layer 30\u00b0 counterclockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(3,0)\/",
@@ -48,7 +63,10 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 90\u00b0 clockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(-3,0)\/",
@@ -58,7 +76,10 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 90\u00b0 counterclockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(0,-2)\/",
@@ -68,7 +89,10 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the bottom layer 60\u00b0 counterclockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(0,-3)\/",
@@ -78,7 +102,10 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the bottom layer 90\u00b0 counterclockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(-2,-3)\/",
@@ -88,7 +115,11 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 60\u00b0 counterclockwise",
+                "Turn the bottom layer 90\u00b0 counterclockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(0,-4)\/",
@@ -98,7 +129,10 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the bottom layer 120\u00b0 counterclockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(2,0)\/",
@@ -108,7 +142,10 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 60\u00b0 clockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(3,0)\/",
@@ -118,7 +155,10 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 90\u00b0 clockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         },
         {
             "notation": "(2,0)\/",
@@ -128,7 +168,10 @@
             },
             "turnType": null,
             "slices": 1,
-            "forHumans": "todo"
+            "forHumans": [
+                "Turn the top layer 60\u00b0 clockwise",
+                "Turn the entire left half of the puzzle 180\u00b0"
+            ]
         }
     ]
 }

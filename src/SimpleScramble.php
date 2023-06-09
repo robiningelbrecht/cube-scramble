@@ -35,7 +35,17 @@ final class SimpleScramble implements Scramble
 
     public function forHumans(): string
     {
-        return implode(PHP_EOL, array_map(fn (Turn $turn) => $turn->forHumans(), $this->getTurns()));
+        return implode(
+            PHP_EOL,
+            array_map(function (Turn $turn) {
+                $forHumans = $turn->forHumans();
+                if (is_string($forHumans)) {
+                    return $forHumans;
+                }
+
+                return implode(PHP_EOL, $forHumans);
+            }, $this->getTurns())
+        );
     }
 
     public function __toString(): string
