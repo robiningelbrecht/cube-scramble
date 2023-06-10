@@ -74,12 +74,44 @@ $scramble = RandomScramble::fromNotation(
 ```
 
 From there on the scramble is `stringable` or `jsonSerializable`.
+When the scramble is invalid, a `InvalidScramble` exception will be thrown.
 
 ### Pyraminx
 
-Same goes for Pyraminx scrambles
-
 ```php
+// U' B' L' R' U B U R' l' b u'
 $scramble = RandomScramble::pyraminx();
 $scramble = PyraminxScramble::random($scrabmleSize)
+```
+
+### Skewb
+
+```php
+// B L' R L' B' U R' B' U'
+$scramble = RandomScramble::skewb();
+$scramble = SkewbScramble::random($scrabmleSize)
+```
+
+### Megaminx
+
+```php
+//  R++ D++ R-- D++ R++ D++ R++ D-- R++ D++ U R++ D-- R-- D-- R-- D++ R++ D-- R++ D++ U...
+$scramble = RandomScramble::megaminx();
+$scramble = MegaminxScramble::random($scrabmleSize, $numberOfSequences)
+```
+
+### Clock
+
+```php
+// UR1+ DR3- DL0+ UL6+ U4- R6+ D1- L6+ ALL2+ y2 U1+ R3+ D1- L4+ ALL3- DR DL UL
+$scramble = RandomScramble::clock();
+$scramble = CockScramble::random()
+```
+
+### Sq1
+
+```php
+//  (4,0)/ (0,3)/ (3,0)/ (-3,0)/ (2,-1)/ (4,-3)/ (0,-3)/ (0,-2)/ (3,-1)/ (2,-1)/ (3,0)/ (-2,0)/ (3,0)/ (0,-5)
+$scramble = RandomScramble::sq1();
+$scramble = Sq1Scramble::random($scrabmleSize)
 ```
