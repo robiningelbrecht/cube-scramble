@@ -11,7 +11,10 @@ This is not an official WCA scrambler but good enough for casual use.
 
 ## Usage
 
-### Generate scrambles
+### Standard cube
+
+Generate scrambles for cubes sizing from 2 to 21. The `RandomScramble` factory 
+generates scrambles that are WCA compliant (in size).
 
 ```php
 $scramble = RandomScramble::twoByTwo();
@@ -23,6 +26,36 @@ $scramble = RandomScramble::sevenBySeven();
 $scramble = CubeScramble::random($scrabmleSize, Size::fromInt($cubeSize))
 ```
 
-### Create scrambles from notation
+It's also possible to reverse scrambles
+
+```php
+$scramble = RandomScramble::threeByThree();
+$reversedScramble = $scramble->reverse();
+```
+
+Or output a human-readable notation for a scramble
+
+```php
+$scramble = RandomScramble::threeByThree();
+print_r($scramble->forHumans());
+```
+
+If you want to initialize a `Scramble` object from a given scramble, use
+
+```php
+$scramble = RandomScramble::fromNotation(
+    "B D R2 U F2 U' R2 U' B2 L2 U2 L2 R2 B' F2 R' U L D' U R'",
+    Size::fromInt($cubeSize)
+);
+```
+
+From there on the scramble is stringable or json serializable.
+
+### Pyraminx
+
+```php
+$scramble = RandomScramble::pyraminx();
+$scramble = PyraminxScramble::random($scrabmleSize, Size::fromInt($cubeSize))
+```
 
 ### Validate scrambles
