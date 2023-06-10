@@ -13,6 +13,8 @@ This is not an official WCA scrambler but good enough for casual use.
 
 ### Standard cube
 
+#### Generate random scramble
+
 The `RandomScramble` factory generates scrambles that are WCA compliant (in size).
 
 ```php
@@ -36,14 +38,14 @@ Or you can generate scrambles yourself
 $scramble = CubeScramble::random($scrabmleSize, Size::fromInt($cubeSize))
 ```
 
-It's also possible to reverse scrambles
+#### Reverse scrambles
 
 ```php
 $scramble = RandomScramble::threeByThree();
 $reversedScramble = $scramble->reverse();
 ```
 
-Or output a human-readable notation for a scramble
+#### Output scramble as human-readable notation
 
 ```php
 $scramble = RandomScramble::threeByThree();
@@ -64,7 +66,7 @@ Turn the right layer 180°
 ...
 ```
 
-If you want to initialize a `Scramble` object from a given scramble, use
+#### Validate and analyse a scramble
 
 ```php
 $scramble = RandomScramble::fromNotation(
