@@ -9,7 +9,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class ClockScramble implements Scramble, Randomizable, FromNotation
+final class ClockScramble implements Scramble, Randomizable, FromNotation
 {
     private const REGEX_FULL_NOTATION = "/^UR\d[+-] DR\d[+-] DL\d[+-] UL\d[+-] U\d[+-] R\d[+-] D\d[+-] L\d[+-] ALL\d[+-] y2 U\d[+-] R\d[+-] D\d[+-] L\d[+-] ALL\d[+-]( UR| DR| DL| UL){1,4}$/";
     private const REGEX_TURN = "/^(?<move>[a-zA-Z]{1,3})(?<turnType>[\d][+-]|[\d])?$/";

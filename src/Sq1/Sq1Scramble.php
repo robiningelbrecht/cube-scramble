@@ -9,7 +9,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class Sq1Scramble implements Scramble, Randomizable, FromNotation
+final class Sq1Scramble implements Scramble, Randomizable, FromNotation
 {
     private const REGEX = "/^\((?<topMove>-?[\d]),(?<bottomMove>-?[\d])\)\/$/";
 

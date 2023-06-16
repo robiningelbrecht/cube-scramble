@@ -11,7 +11,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\SimpleTurnType;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class SkewbScramble implements Scramble, Reversible, Randomizable, FromNotation
+final class SkewbScramble implements Scramble, Reversible, Randomizable, FromNotation
 {
     private const REGEX = "/^(?<move>[URLB])(?<turnType>\\')?$/";
 

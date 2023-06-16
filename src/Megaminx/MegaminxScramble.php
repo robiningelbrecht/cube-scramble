@@ -10,7 +10,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\SimpleTurnType;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class MegaminxScramble implements Scramble, Randomizable, FromNotation
+final class MegaminxScramble implements Scramble, Randomizable, FromNotation
 {
     private const REGEX_D_R = "/^(?<move>[RD])(?<turnType>--|\+\+)$/";
     private const REGEX_U = "/^(?<move>[U])(?<turnType>\\')?$/";

@@ -10,7 +10,7 @@ use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class CubeScramble implements Scramble, Reversible, Randomizable, FromNotation
+final class CubeScramble implements Scramble, Reversible, Randomizable, FromNotation
 {
     private const REGEX = "/^(?<slices>[2-9]+)?(?<move>[UFRDLB])(?<outerBlockIndicator>w)?(?<turnType>\d+\\'|\\'\d+|\d+|\\')?$/";
 
