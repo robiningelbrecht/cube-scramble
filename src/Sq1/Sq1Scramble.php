@@ -2,12 +2,14 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Sq1;
 
+use RobinIngelbrecht\TwistyPuzzleScrambler\FromNotation;
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Randomizable;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class Sq1Scramble implements Scramble
+class Sq1Scramble implements Scramble, Randomizable, FromNotation
 {
     private const REGEX = "/^\((?<topMove>-?[\d]),(?<bottomMove>-?[\d])\)\/$/";
 
@@ -16,8 +18,12 @@ class Sq1Scramble implements Scramble
     ) {
     }
 
-    public static function random(int $scrambleSize): Scramble
+    public static function random(int $scrambleSize = null): Scramble
     {
+        if (!$scrambleSize) {
+            throw new InvalidScramble('ScrambleSize is required');
+        }
+
         $sq1 = Sq1::create();
         $turns = [];
         for ($i = 0; $i < $scrambleSize; ++$i) {
@@ -68,11 +74,6 @@ class Sq1Scramble implements Scramble
     public function getTurns(): array
     {
         return $this->scramble->getTurns();
-    }
-
-    public function reverse(): Scramble
-    {
-        return new self($this->scramble->reverse());
     }
 
     public function forHumans(): string

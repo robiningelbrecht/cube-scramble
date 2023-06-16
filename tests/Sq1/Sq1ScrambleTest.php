@@ -4,7 +4,6 @@ namespace Tests\Sq1;
 
 use PHPUnit\Framework\TestCase;
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
-use RobinIngelbrecht\TwistyPuzzleScrambler\NotImplemented;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Sq1\Sq1Scramble;
 use Spatie\Snapshots\MatchesSnapshots;
 
@@ -23,15 +22,6 @@ class Sq1ScrambleTest extends TestCase
         ));
         $this->assertMatchesTextSnapshot($scramble->forHumans());
         $this->assertCount(count(explode(' ', (string) $scramble)), $scramble->getTurns());
-    }
-
-    public function testReverse(): void
-    {
-        $this->expectException(NotImplemented::class);
-
-        Sq1Scramble::fromNotation(
-            '(0,2)/ (1,-5)/ (-4,5)/ (3,0)/ (-2,-2)/ (3,0)/ (-4,0)/ (-3,-3)/ (0,-3)/ (-2,0)/ (-2,0)/ (2,0)/ (-4,0)/'
-        )->reverse();
     }
 
     public function testItShouldThrowOnInvalidTurn(): void

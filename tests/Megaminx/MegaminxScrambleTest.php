@@ -24,15 +24,6 @@ class MegaminxScrambleTest extends TestCase
         $this->assertCount(count(explode(' ', (string) $scramble)), $scramble->getTurns());
     }
 
-    /**
-     * @dataProvider provideNotations()
-     */
-    public function testReverse(string $scramble): void
-    {
-        $scramble = MegaminxScramble::fromNotation($scramble);
-        $this->assertEquals($scramble->reverse()->reverse(), $scramble);
-    }
-
     public function testItShouldThrowOnInvalidTurn(): void
     {
         $this->expectException(InvalidScramble::class);

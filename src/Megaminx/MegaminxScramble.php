@@ -2,13 +2,15 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Megaminx;
 
+use RobinIngelbrecht\TwistyPuzzleScrambler\FromNotation;
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Randomizable;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\SimpleTurnType;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class MegaminxScramble implements Scramble
+class MegaminxScramble implements Scramble, Randomizable, FromNotation
 {
     private const REGEX_D_R = "/^(?<move>[RD])(?<turnType>--|\+\+)$/";
     private const REGEX_U = "/^(?<move>[U])(?<turnType>\\')?$/";
@@ -18,8 +20,11 @@ class MegaminxScramble implements Scramble
     ) {
     }
 
-    public static function random(int $scrambleSize, int $numberOfSequences = 7): Scramble
+    public static function random(int $scrambleSize = null, int $numberOfSequences = 7): Scramble
     {
+        if (!$scrambleSize) {
+            throw new InvalidScramble('ScrambleSize is required');
+        }
         $turns = [];
         $moves = [Move::R, Move::D];
 
@@ -87,11 +92,6 @@ class MegaminxScramble implements Scramble
     public function getTurns(): array
     {
         return $this->scramble->getTurns();
-    }
-
-    public function reverse(): Scramble
-    {
-        return new self($this->scramble->reverse());
     }
 
     public function forHumans(): string

@@ -2,13 +2,16 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Skewb;
 
+use RobinIngelbrecht\TwistyPuzzleScrambler\FromNotation;
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Randomizable;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Reversible;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\SimpleTurnType;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class SkewbScramble implements Scramble
+class SkewbScramble implements Scramble, Reversible, Randomizable, FromNotation
 {
     private const REGEX = "/^(?<move>[URLB])(?<turnType>\\')?$/";
 
@@ -17,8 +20,11 @@ class SkewbScramble implements Scramble
     ) {
     }
 
-    public static function random(int $scrambleSize): Scramble
+    public static function random(int $scrambleSize = null): Scramble
     {
+        if (!$scrambleSize) {
+            throw new InvalidScramble('ScrambleSize is required');
+        }
         $turns = [];
         $previousMove = null;
 
@@ -72,7 +78,12 @@ class SkewbScramble implements Scramble
 
     public function reverse(): Scramble
     {
-        return new self($this->scramble->reverse());
+        return new self(
+            new SimpleScramble(...array_map(
+                fn (Turn $turn) => $turn->getOpposite(),
+                array_reverse($this->getTurns())
+            ))
+        );
     }
 
     public function forHumans(): string

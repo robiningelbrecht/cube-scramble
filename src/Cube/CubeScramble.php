@@ -2,12 +2,15 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler\Cube;
 
+use RobinIngelbrecht\TwistyPuzzleScrambler\FromNotation;
 use RobinIngelbrecht\TwistyPuzzleScrambler\InvalidScramble;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Randomizable;
+use RobinIngelbrecht\TwistyPuzzleScrambler\Reversible;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Scramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\SimpleScramble;
 use RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn;
 
-class CubeScramble implements Scramble
+class CubeScramble implements Scramble, Reversible, Randomizable, FromNotation
 {
     private const REGEX = "/^(?<slices>[2-9]+)?(?<move>[UFRDLB])(?<outerBlockIndicator>w)?(?<turnType>\d+\\'|\\'\d+|\d+|\\')?$/";
 
@@ -17,8 +20,11 @@ class CubeScramble implements Scramble
     ) {
     }
 
-    public static function random(int $scrambleSize, Size $size = null): Scramble
+    public static function random(int $scrambleSize = null, Size $size = null): Scramble
     {
+        if (!$scrambleSize) {
+            throw new InvalidScramble('ScrambleSize is required');
+        }
         if (!$size) {
             throw new InvalidScramble('Size is required');
         }
@@ -103,7 +109,13 @@ class CubeScramble implements Scramble
 
     public function reverse(): Scramble
     {
-        return new self($this->getSize(), $this->scramble->reverse());
+        return new self(
+            $this->getSize(),
+            new SimpleScramble(...array_map(
+                fn (Turn $turn) => $turn->getOpposite(),
+                array_reverse($this->getTurns())
+            ))
+        );
     }
 
     public function forHumans(): string

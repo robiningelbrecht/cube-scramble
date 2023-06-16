@@ -2,16 +2,12 @@
 
 namespace RobinIngelbrecht\TwistyPuzzleScrambler;
 
-interface Scramble extends \Stringable, \JsonSerializable
+interface Scramble extends HumanReadable, \Stringable, \JsonSerializable
 {
     /**
      * @return \RobinIngelbrecht\TwistyPuzzleScrambler\Turn\Turn[]
      */
     public function getTurns(): array;
-
-    public function reverse(): self;
-
-    public function forHumans(): string;
 
     /**
      * @return array<mixed>
