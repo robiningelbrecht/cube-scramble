@@ -1,4 +1,14 @@
-# Twisty puzzle scrambler
+<h1 align="center">Twisty puzzle scrambler</h1>
+
+<p align="center">
+<a href="https://github.com/robiningelbrecht/twisty-puzzle-scrambler/blob/master/.github/workflows/ci.yml"><img src="https://github.com/robiningelbrecht/twisty-puzzle-scrambler/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<a href="https://github.com/robiningelbrecht/twisty-puzzle-scrambler/blob/master/LICENSE"><img src="https://img.shields.io/github/license/robiningelbrecht/twisty-puzzle-scrambler?color=428f7e&logo=open%20source%20initiative&logoColor=white" alt="License"></a>
+<a href="https://app.codecov.io/gh/robiningelbrecht/twisty-puzzle-scrambler"><img src="https://codecov.io/gh/robiningelbrecht/twisty-puzzle-scrambler/branch/master/graph/badge.svg?token=pj2UH3XLKA"/></a>
+<a href="https://phpstan.org/"><img src="https://img.shields.io/badge/PHPStan-level%209-succes.svg?logo=php&logoColor=white&color=31C652" alt="PHPStan Enabled"></a>
+<a href="https://php.net/"><img src="https://img.shields.io/packagist/php-v/robiningelbrecht/twisty-puzzle-scrambler/dev-master?color=%23777bb3&logo=php&logoColor=white" alt="PHP"></a>
+</p>
+
+---
 
 Tool to generate, verify and analyse scrambles for various twisty puzzles. 
 This is not an official WCA scrambler but good enough for casual use.
