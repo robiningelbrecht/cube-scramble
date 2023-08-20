@@ -85,7 +85,7 @@ $scramble = RandomScramble::fromNotation(
 );
 ```
 
-From there on the scramble is `stringable` or `jsonSerializable`.
+At that point the scramble is `stringable` or `jsonSerializable`.
 When the scramble is invalid, a `InvalidScramble` exception will be thrown.
 
 ### Pyraminx
