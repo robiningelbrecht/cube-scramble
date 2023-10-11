@@ -79,7 +79,7 @@ Turn the right layer 180°
 #### Validate and analyse a scramble
 
 ```php
-$scramble = RandomScramble::fromNotation(
+$scramble = CubeScramble::fromNotation(
     "B D R2 U F2 U' R2 U' B2 L2 U2 L2 R2 B' F2 R' U L D' U R'",
     Size::fromInt($cubeSize)
 );
