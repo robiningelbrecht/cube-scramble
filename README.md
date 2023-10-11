@@ -16,7 +16,7 @@ This is not an official WCA scrambler but good enough for casual use.
 ## Installation
 
 ```bash
-> composer install robiningelbrecht/twisty-puzzle-scrambler
+> composer require robiningelbrecht/twisty-puzzle-scrambler
 ```
 
 ## Usage
